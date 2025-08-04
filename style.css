@@ -102,7 +102,7 @@ h2::after {
 /* Social Icons Row */
 .social-icons {
     display: flex;
-    justify-content: flex-start; /* change to center if needed */
+    justify-content: flex-start; /* change to center if you want center alignment */
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
@@ -113,7 +113,7 @@ h2::after {
 /* Buttons Row */
 .buttons {
     display: flex;
-    justify-content: flex-start; /* change to center if needed */
+    justify-content: flex-start; /* change to center if you want */
     gap: 1rem;
     margin-top: 1rem;
     flex-wrap: wrap;
