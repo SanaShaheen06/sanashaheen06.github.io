@@ -1,168 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sana Shaheen | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sana Shaheen | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+  <header>
+    <a href="#" class="logo">Sana Shaheen</a>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <header>
-        <a href="#" class="logo">Portfolio</a>
-        <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <section id="resume" style="padding: 60px 20px; background: #f9f9f9;">
-  <h2 style="text-align:center; font-size: 32px; margin-bottom: 30px;">My Resume</h2>
+  <section class="home" id="home">
+    <div class="home-img">
+      <img src="main.jpg" alt="Sana Shaheen">
+    </div>
+    <div class="home-content">
+      <h1>Hi, I'm <span>Sana Shaheen</span></h1>
+      <h3 class="typing-text">IT Support Specialist</h3>
+      <p>Based in Kitchener, ON 🇨🇦<br>
+        I help people solve tech problems and make systems work smoothly.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/sana-shaheen-319541240/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/sanashaheen06" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+  </section>
 
-  <div style="max-width: 1000px; margin: auto; font-family: Arial, sans-serif; color: #333;">
-    
-    <h3 style="color:#007bff;">Sana Shaheen</h3>
-    <p>Kitchener, ON | +1 647-239-0171 | <a href="mailto:sanashhn505@gmail.com">sanashhn505@gmail.com</a></p>
-    <p><a href="https://linkedin.com/in/sana-shaheen-319541240/" target="_blank">LinkedIn Profile</a></p>
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I am a recent graduate in Applied Network Infrastructure & System Administration. I have a passion for IT support, system setup, and troubleshooting. I'm always eager to learn and thrive in customer-facing environments.</p>
+  </section>
 
-    <h4>Summary</h4>
-    <p>Recent graduate in Applied Network Infrastructure and System Administration with nearly 1 year of hands-on experience in technical support and IT field operations. Skilled in walk-in support, hardware/software setup, troubleshooting, and IT asset management. Proficient in Active Directory, Office 365, and remote desktop tools. Known for delivering user-friendly service in fast-paced environments.</p>
-    
-    <h4>Skills</h4>
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
     <ul>
-      <li>System Admin: Active Directory, DNS, DHCP, GPO</li>
-      <li>Network Fundamentals: LAN/WAN, TCP/IP</li>
-      <li>IT Asset & Inventory Management</li>
-      <li>Ticketing Tools: BMC Helix</li>
-      <li>AV Support: Projectors, Extron, ShareLink</li>
+      <li>System Administration (AD, DNS, DHCP, GPO)</li>
+      <li>IT Asset Management & AV Support</li>
+      <li>Technical Support & Ticketing Tools</li>
+      <li>Network Fundamentals (LAN/WAN, TCP/IP)</li>
       <li>Operating Systems: Windows & Linux</li>
-      <li>Security & Maintenance, Office 365</li>
-      <li>Strong Customer Service & Communication</li>
+      <li>Office 365, VPN, MFA, Remote Desktop</li>
+      <li>Excellent Communication & Team Collaboration</li>
     </ul>
-    
-    <h4>Certificates</h4>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
     <ul>
-      <li>Google Cybersecurity Professional Certificate – 2025</li>
-      <li>IT Essentials – Cisco Networking Academy</li>
-      <li>Network Security – Great Learning Academy</li>
+      <li><strong>Capstone Project:</strong> Deployed HA hybrid infrastructure across two global locations with secure remote access, centralized identity, and monitoring tools.</li>
+      <li><strong>Linux Firewall:</strong> Configured firewall rules and subnet isolation.</li>
+      <li><strong>Portfolio Website:</strong> Designed this responsive portfolio using HTML/CSS.</li>
     </ul>
+  </section>
 
-    <h4>Work Experience</h4>
-    <strong>IT Field Operations Technician, Conestoga College</strong><br>
-    <em>July 2024 – April 2025</em>
-    <ul>
-      <li>Supported 4000+ users across 10+ campus buildings</li>
-      <li>Deployed and set up workstations; resolved connectivity issues</li>
-      <li>Managed IT assets and AV system setup (Extron, ShareLink)</li>
-      <li>Used BMC Helix for ticketing and escalated issues as needed</li>
-    </ul>
+  <section id="resume">
+    <h2>My Resume</h2>
+    <div class="resume-box">
+      <p><strong>Sana Shaheen</strong><br>
+        Kitchener, ON | +1 647-239-0171 | <a href="mailto:sanashhn505@gmail.com">sanashhn505@gmail.com</a><br>
+        <a href="https://linkedin.com/in/sana-shaheen-319541240/" target="_blank">LinkedIn</a>
+      </p>
+      <h3>Summary</h3>
+      <p>Recent graduate with hands-on IT support experience across multi-campus environments. Skilled in troubleshooting, system administration, and delivering friendly support.</p>
+      <h3>Certifications</h3>
+      <ul>
+        <li>Google Cybersecurity Professional Certificate (2025)</li>
+        <li>IT Essentials – Cisco Networking Academy</li>
+        <li>Network Security – Great Learning</li>
+      </ul>
+      <h3>Work Experience</h3>
+      <p><strong>IT Field Operations Technician – Conestoga College</strong><br>Jul 2024 – Apr 2025<br>
+      Supported 4000+ users, deployed devices, managed AV setups, and used BMC Helix for support tickets.</p>
+      <p><strong>Customer Service Associate – Amazon</strong><br>Sept 2023 – Dec 2023<br>
+      Handled support tickets, processed returns, and delivered customer care across chat and email.</p>
+      <h3>Education</h3>
+      <p><strong>Conestoga College</strong> – Post Grad Diploma<br>
+      Applied Network Infrastructure & System Administration (GPA: 3.5/4) – Apr 2025</p>
+      <p><strong>Nawab Shah Alam Khan College</strong> – B.Tech IT (CGPA: 6.9/10)</p>
+    </div>
+  </section>
 
-    <strong>Customer Service Associate, Amazon</strong><br>
-    <em>Sept 2023 – Dec 2023 (Hyderabad, India)</em>
-    <ul>
-      <li>Resolved customer issues via phone/chat/email with empathy</li>
-      <li>Handled returns, refunds, and inquiries in compliance with SOPs</li>
-    </ul>
-
-    <h4>Volunteer Experience</h4>
-    <strong>Summer Program Volunteer – MAC Kitchener Masjid</strong><br>
-    <em>July 2024</em>
-    <ul>
-      <li>Supervised children, led games, and supported inclusive activities</li>
-    </ul>
-
-    <h4>Education</h4>
-    <strong>Conestoga College – Post-Grad Diploma</strong><br>
-    Applied Network Infrastructure & System Administration, GPA: 3.5/4 (Apr 2025)<br><br>
-    
-    <strong>Nawab Shah Alam Khan College of Engineering</strong><br>
-    B.Tech in Information Technology, CGPA: 6.9/10 (Dec 2020)
-
-    <h4>Capstone Project</h4>
-    <p><strong>IT Infrastructure Deployment – 2025</strong><br>
-    Designed a hybrid network across multiple global locations using Windows Server 2019, Ubuntu, Active Directory, Exchange, Zammad, Nagios, and PostgreSQL. Implemented high availability, LDAP-based authentication, and secure remote access.
-    </p>
-
-    <h4>Additional Info</h4>
-    <ul>
-      <li>Willing to travel and relocate</li>
-      <li>Open to learning new tools and technologies</li>
-    </ul>
-  </div>
-</section>
-
-            <li><a href="#resume">Resume</a></li>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Home Section -->
-    <section class="home" id="home">
-        <div class="home-img">
-            <img src="main.jpg" alt="Sana Shaheen">
-        </div>
-        <div class="home-content">
-            <h1>Hi, I'm <span>Sana Shaheen</span></h1>
-            <h3 class="typing-text">IT Support Specialist</h3>
-            <p class="intro">
-                Based in Kitchener, ON 🇨🇦<br>
-                I’m passionate about solving technical problems, supporting users with care, and ensuring systems run smoothly and securely.
-            </p>
-
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sana-shaheen-319541240/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/sanashaheen06" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <a href="SanaShaheen-Resume.pdf" class="btn" target="_blank">Download Resume</a>
-            <a href="#contact" class="btn">Let's Connect</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2>About Me</h2>
-        <p>
-            Hi, I'm Sana Shaheen, a passionate IT professional with hands-on experience in technical support, network infrastructure, and system administration. I hold a Post-Graduate Diploma in Applied Network Infrastructure & System Administration and enjoy solving problems, supporting end users, and continuously learning new technologies.
-        </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>✅ Technical Support (Level 1)</li>
-            <li>✅ Network Troubleshooting & Configuration</li>
-            <li>✅ Windows & Linux Systems</li>
-            <li>✅ VPN, MFA, and Device Configuration</li>
-            <li>✅ Ticketing Systems (e.g., Jira, ServiceNow)</li>
-            <li>✅ Firewall Configuration (Linux)</li>
-            <li>✅ Collaboration & Teamwork</li>
-        </ul>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>High-Availability Cluster Deployment:</strong> Deployed HA cluster with failover for mission-critical services (Capstone Project).</li>
-            <li><strong>Linux Firewall:</strong> Configured firewall rules and tested network isolation in a virtual environment.</li>
-            <li><strong>Network Integration Plan:</strong> Designed IP architecture for merging two companies into a unified secure network.</li>
-            <li><strong>Personal Portfolio Website:</strong> Built this portfolio using HTML, CSS, and GitHub Pages.</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:sanashhn505@gmail.com">sanashhn505@gmail.com</a></p>
-        <p>Phone: +1 647-239-0171</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/sana-shaheen-319541240/" target="_blank">sana-shaheen-319541240</a></p>
-        <p>GitHub: <a href="https://github.com/sanashaheen06" target="_blank">sanashaheen06</a></p>
-    </section>
-
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:sanashhn505@gmail.com">sanashhn505@gmail.com</a></p>
+    <p>Phone: +1 647-239-0171</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/sana-shaheen-319541240/" target="_blank">linkedin.com/in/sana-shaheen</a></p>
+    <p>GitHub: <a href="https://github.com/sanashaheen06" target="_blank">github.com/sanashaheen06</a></p>
+  </section>
 </body>
 </html>
+
 
