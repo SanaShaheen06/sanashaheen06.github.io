@@ -104,13 +104,13 @@ h2::after {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 5.5rem;          /* increased from 4rem */
-    height: 5.5rem;         /* increased from 4rem */
+    width: 5rem;          /* increased from 4rem */
+    height: 5rem;         /* increased from 4rem */
     background-color: transparent;
     border: 0.2rem solid #b74b4b;
-    font-size: 4rem;      /* increased from 2rem */
+    font-size: 3rem;      /* increased from 2rem */
     border-radius: 50%;
-    margin: 4rem 1.9rem 4rem 0;
+    margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
     color: #b74b4b;
 }
