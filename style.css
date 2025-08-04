@@ -18,7 +18,7 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: blue;
+    background-color: black;
     color: white;
     overflow-x: hidden;
 }
@@ -29,7 +29,7 @@ header {
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: blue;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,7 +99,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: blue;
+    background-color: black;
     flex-wrap: wrap;
 }
 
@@ -162,7 +162,7 @@ span {
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: blue;
+    background-color: black;
     border-radius: 4rem;
     font-size: 1.6rem;
     color: #b74b4b;
