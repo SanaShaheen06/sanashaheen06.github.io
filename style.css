@@ -18,7 +18,7 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: black;
+    background-color: blue;
     color: white;
     overflow-x: hidden;
 }
@@ -29,7 +29,7 @@ header {
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: Light Blue;
+    background-color: blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,7 +99,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
+    background-color: blue;
     flex-wrap: wrap;
 }
 
@@ -162,7 +162,7 @@ span {
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: black;
+    background-color: blue;
     border-radius: 4rem;
     font-size: 1.6rem;
     color: #b74b4b;
@@ -197,7 +197,7 @@ span {
 
 .typing-text span::after {
     content: "";
-    background-color: black;
+    background-color: blue;
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
