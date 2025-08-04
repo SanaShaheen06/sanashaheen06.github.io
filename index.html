@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sana Shaheen | Portfolio</title>
+
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <a href="#" class="logo">Sana</a>
         <nav>
@@ -22,12 +29,12 @@
 
     <!-- Home Section -->
     <section class="home" id="home">
-        <div class="home-img">
+        <div class="home-img" data-aos="fade-right">
             <img src="main.jpg" alt="Sana Shaheen">
         </div>
-        <div class="home-content">
+        <div class="home-content" data-aos="fade-left">
             <h1>Hi, I'm <span>Sana Shaheen</span></h1>
-            <h3 class="typing-text">IT Support Specialist</h3>
+            <h3 class="typing-text">I am <span id="typing"></span></h3>
             <p class="intro">
                 Based in Kitchener, ON 🇨🇦<br>
                 I’m passionate about solving technical problems, supporting users with care, and ensuring systems run smoothly and securely.
@@ -41,14 +48,14 @@
             </div>
 
             <div class="buttons">
-  <a href="#contact" class="btn">Hire Me</a>
-  <a href="#projects" class="btn">See My Work</a>
-</div>
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#projects" class="btn">See My Work</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="about" data-aos="fade-up">
         <h2>About Me</h2>
         <p>
             Hi, I'm Sana Shaheen, a passionate IT professional with hands-on experience in technical support, network infrastructure, and system administration. I hold a Post-Graduate Diploma in Applied Network Infrastructure & System Administration and enjoy solving problems, supporting end users, and continuously learning new technologies.
@@ -56,41 +63,44 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills" id="skills">
+    <section class="skills" id="skills" data-aos="fade-up">
         <h2>Skills</h2>
-        <ul>
-            <li>✅ Technical Support (Level 1)</li>
-            <li>✅ Network Troubleshooting & Configuration</li>
-            <li>✅ Windows & Linux Systems</li>
-            <li>✅ VPN, MFA, and Device Configuration</li>
-            <li>✅ Ticketing Systems (e.g., Jira, ServiceNow)</li>
-            <li>✅ Firewall Configuration (Linux)</li>
-            <li>✅ Collaboration & Teamwork</li>
-        </ul>
+        <div class="skills-list">
+            <div class="skill-card">Technical Support (Level 1)</div>
+            <div class="skill-card">Network Troubleshooting</div>
+            <div class="skill-card">Windows & Linux Systems</div>
+            <div class="skill-card">VPN, MFA, Device Setup</div>
+            <div class="skill-card">Ticketing Systems (Jira, ServiceNow)</div>
+            <div class="skill-card">Firewall Configuration (Linux)</div>
+            <div class="skill-card">Collaboration & Teamwork</div>
+        </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section class="projects" id="projects" data-aos="fade-up">
         <h2>Projects</h2>
-        <ul>
-            <li><strong>IT Infrastructure Deployment – Capstone Project (2025): Designed and deployed a hybrid IT infrastructure for a
-global web development firm with offices in New York and Hong Kong. Built secure, virtualized environments using
-Windows Server 2019 and Ubuntu. Configured Active Directory with a two-way trust relationship for centralized
-identity management and RBAC. Integrated Zammad for ticketing, Nagios for monitoring, Microsoft Exchange with
-DAG for email redundancy, Apache Guacamole for secure remote access, and Mattermost for internal
-communication. Developed a unified web portal using LDAP-based authentication and RESTful APIs. Proposed
-high-availability architecture with PostgreSQL replication.
-Technologies Used: Windows Server 2019, Ubuntu, AD, Exchange, Zammad, Nagios, Guacamole, Mattermost,
-PostgreSQL.
-</li>
-            <li><strong>Linux Firewall:</strong> Configured firewall rules and tested network isolation in a virtual environment.</li>
-            <li><strong>Network Integration Plan:</strong> Designed IP architecture for merging two companies into a unified secure network.</li>
-            <li><strong>Personal Portfolio Website:</strong> Built this portfolio using HTML, CSS, and GitHub Pages.</li>
-        </ul>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>IT Infrastructure Deployment</h3>
+                <p>Designed and deployed a hybrid IT infrastructure for a global firm with offices in New York and Hong Kong. Configured AD, Exchange, Nagios, Zammad, Mattermost, PostgreSQL, and more for secure, high-availability environments.</p>
+            </div>
+            <div class="project-card">
+                <h3>Linux Firewall</h3>
+                <p>Configured firewall rules and tested network isolation in a virtual environment.</p>
+            </div>
+            <div class="project-card">
+                <h3>Network Integration Plan</h3>
+                <p>Designed IP architecture for merging two companies into a unified secure network.</p>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Developed this portfolio using HTML, CSS, and deployed via GitHub Pages.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
         <p>Email: <a href="mailto:sanashhn505@gmail.com">sanashhn505@gmail.com</a></p>
         <p>Phone: +1 647-239-0171</p>
@@ -98,8 +108,44 @@ PostgreSQL.
         <p>GitHub: <a href="https://github.com/sanashaheen06" target="_blank">sanashaheen06</a></p>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Sana Shaheen. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JS: Typing Effect -->
+    <script>
+        const roles = ["IT Support Specialist", "Network Administrator", "Problem Solver", "Tech Enthusiast"];
+        let i = 0, j = 0, currentRole = '', isDeleting = false;
+
+        function typeEffect() {
+            currentRole = roles[i];
+            if (isDeleting) {
+                document.getElementById("typing").textContent = currentRole.substring(0, j--);
+                if (j < 0) {
+                    isDeleting = false;
+                    i = (i + 1) % roles.length;
+                }
+            } else {
+                document.getElementById("typing").textContent = currentRole.substring(0, j++);
+                if (j > currentRole.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000);
+                    return;
+                }
+            }
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+        typeEffect();
+    </script>
+
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
 </body>
 </html>
+
 
 
 
