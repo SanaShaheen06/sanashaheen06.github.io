@@ -99,35 +99,25 @@ h2::after {
     max-width: 500px;
 }
 
-/* Social Icons */
+/* Social Icons Row */
 .social-icons {
     display: flex;
+    justify-content: flex-start; /* change to center if needed */
     gap: 1rem;
     flex-wrap: wrap;
-    margin: 2rem 0;
-}
-
-.social-icons a {
-    font-size: 2rem;
-    color: #b74b4b;
-    border: 2px solid #b74b4b;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    background: #b74b4b;
-    color: black;
-    box-shadow: 0 0 15px #ff7676;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%; /* forces a new row */
 }
 
 /* Buttons Row */
 .buttons {
     display: flex;
+    justify-content: flex-start; /* change to center if needed */
     gap: 1rem;
     margin-top: 1rem;
     flex-wrap: wrap;
+    width: 100%; /* forces a new row */
 }
 
 .btn {
@@ -211,4 +201,3 @@ footer {
     backdrop-filter: blur(8px);
     font-size: 1.4rem;
 }
-
