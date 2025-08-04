@@ -16,11 +16,11 @@ html {
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
-    background-color: black;
-    color: white;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+  
 }
 
 header {
@@ -28,7 +28,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 9%;
+    padding: 20px 40px;
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -38,9 +38,10 @@ header {
 }
 
 .logo {
-    font-size: 3rem;
-    color: #b74b4b;
-    font-weight: 800;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -50,18 +51,18 @@ header {
 }
 
 nav a {
-    font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
     border-bottom: 3px solid transparent;
 }
 
 nav a:hover,
 nav a.active {
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+    color: #ffbe0b;
+    border-bottom: 3px solid #ffbe0b;
 }
 
 @media(max-width: 995px) {
