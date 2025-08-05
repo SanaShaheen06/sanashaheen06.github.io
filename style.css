@@ -72,13 +72,14 @@ h2::after {
 }
 
 /* Layout of home section */
-.home {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem 2rem;
-  flex-wrap: wrap;
-  gap: 2rem;
+.home-img img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 50%; /* Makes image circular */
+  object-fit: cover; /* Ensures image fills container without stretching */
+  aspect-ratio: 1 / 1; /* Keeps the image square for circular shape */
+  box-shadow: 0 0 20px #b74b4b; /* Soft glowing effect */
 }
 
 /* Text content */
