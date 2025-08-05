@@ -1,79 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sana Shaheen | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sana Shaheen | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                <span>Sana</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#">About</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Skills</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#">Projects</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div>
-                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#">Contact</a></div>
-            </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        </div>
-        <div class="dropdown">
-            <div class="links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Projects</a>
-                <a href="#">Blogs</a>
-                <a href="#">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
-        </div>
-    </nav>
 
-    <section>
-        <div class="main-container">
-            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-                <img src="main.png" alt="Sana Shaheen Photo">
-            </div>
-            <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey, I'm <span>Sana Shaheen</span></h1>
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
-                    A passionate Technical Support Specialist and Network Infrastructure graduate. I specialize in troubleshooting, system configuration, and delivering exceptional end-user support.
-                </p>
-                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                    <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://linkedin.com/in/sana-shaheen-319541240/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:sanashhn505@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                    <a href="https://your-resume-link.com" target="_blank"><button>Download CV</button></a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">
+        <span>Sana</span>
+      </div>
+      <div class="links">
+        <div class="link"><a href="#home">Home</a></div>
+        <div class="link"><a href="#about">About</a></div>
+        <div class="link"><a href="#skills">Skills</a></div>
+        <div class="link"><a href="#projects">Projects</a></div>
+        <div class="link"><a href="#blogs">Blogs</a></div>
+        <div class="link contact-btn"><a href="#contact">Contact</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({offset:0});
-    </script>
-    <script>
-        function hamburg(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(0px)"
-        }
-        function cancel(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(-500px)"
-        }
-    </script>
+    <div class="dropdown">
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#contact">Contact</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="main-container">
+      <div class="image" data-aos="zoom-in-right">
+        <img src="main.png" alt="Sana Shaheen Photo" />
+      </div>
+      <div class="content">
+        <h1 data-aos="fade-left">Hey, I'm <span>Sana Shaheen</span></h1>
+        <div class="typewriter" data-aos="fade-right">I'm a <span></span></div>
+        <p data-aos="flip-up">
+          A passionate Technical Support Specialist and Network Infrastructure graduate. I specialize in troubleshooting, system configuration, and delivering exceptional end-user support.
+        </p>
+        <div class="social-links" data-aos="flip-down">
+          <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/sana-shaheen-319541240/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:sanashhn505@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="btn" data-aos="zoom-out-left">
+          <a href="https://your-resume-link.com" target="_blank"><button>Download CV</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Sana, a highly motivated Technical Support Specialist with a post-graduate diploma in Network Infrastructure & System Administration. I have hands-on experience in troubleshooting hardware/software issues, configuring devices, and helping users stay productive. I thrive in team environments and love learning new technologies.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>✅ Technical Support (Level 1 & 2)</li>
+      <li>✅ Windows & Linux Administration</li>
+      <li>✅ Networking Fundamentals (TCP/IP, DNS, DHCP)</li>
+      <li>✅ VPN, MFA, Active Directory</li>
+      <li>✅ System Imaging & Troubleshooting</li>
+      <li>✅ Ticketing Systems (JIRA, ServiceNow)</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Linux Firewall Configuration</h3>
+        <p>Designed and configured a secure Linux-based firewall using iptables and fail2ban for intrusion prevention.</p>
+      </div>
+      <div class="project-card">
+        <h3>High Availability Cluster</h3>
+        <p>Developed a high-availability server cluster using Keepalived and HAProxy for seamless failover.</p>
+      </div>
+      <div class="project-card">
+        <h3>Network Design Capstone</h3>
+        <p>Planned and documented a full corporate network infrastructure integrating VLANs, routing, and cloud failover.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blogs -->
+  <section id="blogs" class="section">
+    <h2>Blogs</h2>
+    <p>Coming soon... I’ll be sharing helpful tech tutorials, tips, and stories from my career journey.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="mailto:sanashhn505@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
+    }
+
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
 </body>
 </html>
