@@ -1,248 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sana Shaheen | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">
+        <span>Sana</span>
+      </div>
+      <div class="links">
+        <div class="link"><a href="#home">Home</a></div>
+        <div class="link"><a href="#about">About</a></div>
+        <div class="link"><a href="#skills">Skills</a></div>
+        <div class="link"><a href="#projects">Projects</a></div>
+        <div class="link"><a href="#blogs">Blogs</a></div>
+        <div class="link contact-btn"><a href="#contact">Contact</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
 
-body {
-    background: #000;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
+    <div class="dropdown">
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#contact">Contact</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
 
-html {
-    scroll-padding-top: 80px; /* height of fixed header */
-}
+  <!-- Home Section -->
+  <section id="home">
+    <div class="main-container">
+      <div class="image" data-aos="zoom-in-right">
+        <img src="main.png" alt="Sana Shaheen Photo" />
+      </div>
+      <div class="content">
+        <h1 data-aos="fade-left">Hey, I'm <span>Sana Shaheen</span></h1>
+        <div class="typewriter" data-aos="fade-right">I'm a <span></span></div>
+        <p data-aos="flip-up">
+          A passionate Technical Support Specialist and Network Infrastructure graduate. I specialize in troubleshooting, system configuration, and delivering exceptional end-user support.
+        </p>
+        <div class="social-links" data-aos="flip-down">
+          <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/sana-shaheen-319541240/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:sanashhn505@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="btn" data-aos="zoom-out-left">
+          <a href="https://your-resume-link.com" target="_blank"><button>Download CV</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px; /* fixed header height */
-    padding: 1rem 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-}
+  <!-- About Me -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Sana, a highly motivated Technical Support Specialist with a post-graduate diploma in Network Infrastructure & System Administration. I have hands-on experience in troubleshooting hardware/software issues, configuring devices, and helping users stay productive. I thrive in team environments and love learning new technologies.
+    </p>
+  </section>
 
-.logo {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #b74b4b;
-}
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>✅ Technical Support (Level 1 & 2)</li>
+      <li>✅ Windows & Linux Administration</li>
+      <li>✅ Networking Fundamentals (TCP/IP, DNS, DHCP)</li>
+      <li>✅ VPN, MFA, Active Directory</li>
+      <li>✅ System Imaging & Troubleshooting</li>
+      <li>✅ Ticketing Systems (JIRA, ServiceNow)</li>
+    </ul>
+  </section>
 
-nav a {
-    color: white;
-    margin-left: 2rem;
-    font-size: 1.6rem;
-    transition: 0.3s;
-}
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Linux Firewall Configuration</h3>
+        <p>Designed and configured a secure Linux-based firewall using iptables and fail2ban for intrusion prevention.</p>
+      </div>
+      <div class="project-card">
+        <h3>High Availability Cluster</h3>
+        <p>Developed a high-availability server cluster using Keepalived and HAProxy for seamless failover.</p>
+      </div>
+      <div class="project-card">
+        <h3>Network Design Capstone</h3>
+        <p>Planned and documented a full corporate network infrastructure integrating VLANs, routing, and cloud failover.</p>
+      </div>
+    </div>
+  </section>
 
-nav a:hover,
-nav a.active {
-    color: #ff7676;
-}
+  <!-- Blogs -->
+  <section id="blogs" class="section">
+    <h2>Blogs</h2>
+    <p>Coming soon... I’ll be sharing helpful tech tutorials, tips, and stories from my career journey.</p>
+  </section>
 
-section {
-    padding: 8rem 8% 5rem;
-    min-height: 100vh;
-}
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="mailto:sanashhn505@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-h2 {
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
-    position: relative;
-}
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
 
-h2::after {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #b74b4b, #ff7676);
-    left: 0;
-    bottom: -8px;
-}
-
-.home {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-}
-
-.home-img img {
-    width: 300px;
-    border-radius: 50%;
-    animation: glow 3s infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        box-shadow: 0 0 20px #b74b4b;
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
     }
-    to {
-        box-shadow: 0 0 40px #ff7676;
+
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
     }
-}
+  </script>
+</body>
+</html>
 
-.home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 600px;
-    padding-bottom: 3rem; /* space below for buttons */
-}
-
-.home-content h1 {
-    font-size: 4rem;
-}
-
-.home-content h3 {
-    font-size: 2.4rem;
-    margin: 1rem 0;
-    color: #b74b4b;
-}
-
-.intro {
-    font-size: 1.6rem;
-    max-width: 500px;
-}
-
-/* Social Icons Row */
-.social-icons {
-    display: flex;
-    justify-content: flex-start; /* change to center if you want */
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 100%; /* forces new line */
-}
-
-.social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem; /* bigger size */
-    height: 5rem;
-    background-color: transparent;
-    border: 0.2rem solid #b74b4b;
-    font-size: 3rem; /* bigger icon */
-    border-radius: 50%;
-    margin-right: 1rem;
-    transition: 0.3s ease;
-    color: #b74b4b;
-}
-
-.social-icons a:hover {
-    color: black;
-    background: linear-gradient(135deg, #b74b4b, #ff7676);
-    box-shadow: 0 0 15px #ff7676;
-    transform: scale(1.2);
-}
-
-/* Buttons Row */
-.buttons {
-    display: flex;
-    justify-content: flex-start; /* change to center if you want */
-    gap: 1rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    width: 100%; /* forces new line */
-    margin-bottom: 2rem; /* spacing below buttons */
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    border: 2px solid #b74b4b;
-    border-radius: 30px;
-    color: #b74b4b;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: linear-gradient(135deg, #b74b4b, #ff7676);
-    color: black;
-}
-
-/* Skills Section */
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #b74b4b;
-}
-
-/* Projects Section */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px #b74b4b;
-}
-
-.project-card h3 {
-    margin-bottom: 1rem;
-    color: #ff7676;
-}
-
-/* Contact Section */
-.contact p {
-    font-size: 1.6rem;
-    margin: 0.5rem 0;
-}
-
-.contact a {
-    color: #b74b4b;
-    transition: 0.3s;
-}
-
-.contact a:hover {
-    color: #ff7676;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(8px);
-    font-size: 1.4rem;
-}
 
 
 
