@@ -99,23 +99,27 @@ h2::after {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 600px;
+  max-width: 500px;
+  padding-bottom: 2rem;
 }
 
 .home-content h1 {
-  font-size: 4rem;
+  font-size: 3rem; /* reduced from 4rem */
+  line-height: 1.2;
 }
 
 .home-content h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem; /* reduced from 2.4rem */
   margin: 1rem 0;
   color: #6c63ff;
 }
 
 .intro {
-  font-size: 1.6rem;
-  max-width: 500px;
+  font-size: 1.4rem; /* reduced from 1.6rem */
+  max-width: 100%;
+  margin-bottom: 1.5rem;
 }
+
 
 /* Social Icons */
 .social-icons {
