@@ -71,18 +71,37 @@ h2::after {
     bottom: -8px;
 }
 
+/* Layout of home section */
 .home {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.home-img img {
-    width: 500px;
-    border-radius: 50%;
-    animation: glow 3s infinite alternate;
+/* Text content */
+.home-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.home-content h1 {
+  font-size: 2rem; /* decrease if needed */
+  margin-bottom: 0.5rem;
+}
+
+.home-content h2 {
+  font-size: 1.5rem;
+  color: #b74b4b;
+  margin-bottom: 0.5rem;
+}
+
+.home-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
 }
 
 @keyframes glow {
@@ -92,6 +111,23 @@ h2::after {
     to {
         box-shadow: 0 0 40px #ff7676;
     }
+}
+
+/* Image styling */
+.home-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+.home-img img {
+  width: 100%;
+  max-width: 350px; /* increase if you want it larger */
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .home-content {
