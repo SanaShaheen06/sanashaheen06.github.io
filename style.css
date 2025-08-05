@@ -204,15 +204,20 @@ h2::after {
 }
 
 .project-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 12px;
-    transition: 0.3s;
+  display: block; /* make anchor a block */
+  color: inherit; /* keep text color */
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px #b74b4b;
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #b74b4b;
+  background: linear-gradient(135deg, #b74b4b, #ff7676);
+  color: black;
 }
 
 .project-card h3 {
