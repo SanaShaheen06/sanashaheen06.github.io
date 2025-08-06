@@ -24,9 +24,10 @@ header {
   justify-content: space-between; align-items: center; background: rgba(13, 13, 13, 0.7);
   backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000;
 }
+/* FIX: Cursive font style for the logo */
 .logo {
     font-family: var(--font-cursive);
-    font-size: 2.8rem; /* Adjusted for cursive font */
+    font-size: 2.8rem;
     font-weight: 400;
     color: var(--text-color);
 }
@@ -48,24 +49,38 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .action-buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
 .btn { display: inline-block; padding: 12px 28px; background-color: var(--primary-color); color: var(--bg-color); border: 2px solid var(--primary-color); border-radius: 8px; font-weight: 700; transition: all 0.3s ease; font-family: var(--font-primary); }
 .btn:hover { background-color: transparent; color: var(--primary-color); }
-.btn-secondary { background-color: transparent; color: var(--secondary-color); border-color: var(--secondary-color); }
-.btn-secondary:hover { background-color: var(--secondary-color); color: var(--bg-color); }
 
-/* --- ABOUT SECTION (Reverted to Centered) --- */
-.about { background-color: #111; justify-content: center; }
-.about-content { max-width: 800px; text-align: center; }
+/* FIX: Button color consistency. Both are now red. */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* FIX: About section centered again */
+.about {
+    background-color: #111;
+    justify-content: center;
+}
+.about-content {
+    max-width: 800px;
+    text-align: center;
+}
 .about p { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 1rem; }
 
 /* --- SKILLS & CERTIFICATIONS --- */
-.skills { background-color: #0d0d0d; } /* Default background */
-.certifications { background-color: #111; } /* Slightly different background to separate sections */
+.skills { background-color: #0d0d0d; }
+.certifications { background-color: #111; }
 .skills-grid, .certificate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 .skill-card { background-color: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
 .skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-color: var(--secondary-color); }
 .skill-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
 .skill-card h3 { font-size: 1.1rem; font-weight: 500; }
 
-/* Styles for the new certificate cards */
 .certificate-card { background: var(--card-bg-color); border-radius: 10px; border: 1px solid var(--border-color); overflow: hidden; text-align: center; transition: all 0.3s ease-in-out; }
 .certificate-card:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(168, 218, 220, 0.3); }
 .certificate-image img { width: 100%; height: auto; display: block; }
@@ -73,7 +88,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .certificate-info h3 { font-size: 1.1rem; font-weight: 500; color: var(--secondary-color); }
 
 /* --- PROJECTS --- */
-.projects .section-title { text-align: left; }
+.projects .section-title { text-align: center; } /* Reverted to center for consistency */
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 .project-card { background: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.4s ease; color: var(--text-color); }
 .project-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(230, 57, 70, 0.3); }
@@ -95,30 +110,10 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 .contact-btn i { margin-right: 0.5rem; }
 footer { text-align: center; padding: 2rem 8%; background-color: #111; border-top: 1px solid var(--border-color); }
 
-/* --- GALLERY PAGE & MODAL --- */
-.gallery-body { background-color: #111; }
-.gallery-header { border-bottom: none; background: transparent; }
-.gallery-main { padding: 80px 8% 40px; }
-.gallery-intro { text-align: center; max-width: 800px; margin: 0 auto 4rem; }
-.gallery-intro p { color: var(--secondary-color); }
-.photo-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border-color); }
-.gallery-img:hover { transform: scale(1.04); box-shadow: 0 0 25px rgba(230, 57, 70, 0.4); }
-.modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
-.modal-content { margin: auto; display: block; width: 80%; max-width: 900px; animation-name: zoom; animation-duration: 0.4s; }
-@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
-.close-btn { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
-.close-btn:hover, .close-btn:focus { color: #bbb; text-decoration: none; }
-#caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 10px 0; height: 150px; }
-
 /* --- RESPONSIVE DESIGN --- */
-@media (max-width: 992px) { .home-content h1 { font-size: 3rem; } }
 @media (max-width: 768px) {
-  header { padding: 0 5%; }
-  section { padding: 80px 5%; }
   nav { display: none; }
   .home { text-align: center; flex-direction: column-reverse; }
   .home-content { text-align: center; }
   .action-buttons, .social-icons { justify-content: center; }
-  .section-title, .projects .section-title { text-align: center; }
 }
