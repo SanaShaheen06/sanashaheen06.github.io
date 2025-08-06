@@ -77,11 +77,33 @@ nav a:hover { color: var(--primary-color); }
 .btn-secondary { background-color: transparent; color: var(--secondary-color); border-color: var(--secondary-color); }
 .btn-secondary:hover { background-color: var(--secondary-color); color: var(--bg-color); }
 
+
 /* --- ABOUT SECTION --- */
-.about { background-color: #0C0E14; }
-.about-content { max-width: 800px; text-align: center; }
-.about p { font-size: 1.1rem; color: var(--text-color); margin-bottom: 1rem; opacity: 0.9; }
-.about p.personal-touch { color: var(--secondary-color); font-style: italic; font-size: 1rem; margin-top: 1.5rem; }
+.about { 
+  background-color: #0C0E14; 
+  align-items: center; /* This is the line that centers the content horizontally */
+}
+
+.about-content { 
+  max-width: 800px; 
+  text-align: center; 
+}
+
+.about p { 
+  font-size: 1.1rem; 
+  color: var(--text-color); 
+  margin-bottom: 1rem; 
+  opacity: 0.9; 
+}
+
+.about p.personal-touch { 
+  color: var(--secondary-color); 
+  font-style: italic; 
+  font-size: 1rem; 
+  margin-top: 1.5rem; 
+}
+
+
 
 /* --- SKILLS & CERTIFICATIONS --- */
 .skills { background-color: var(--bg-color); }
