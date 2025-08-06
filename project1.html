@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: IT Infrastructure Deployment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-body">
+
+    <header class="gallery-header">
+        <a href="index.html" class="logo">Sana Shaheen<span>.</span></a>
+    </header>
+
+    <main class="gallery-main">
+        <div class="gallery-intro">
+            <h1 class="section-title">IT Infrastructure Deployment - Capstone</h1>
+            <p>This gallery showcases the key components and architecture of the hybrid IT infrastructure project. It includes diagrams of the Active Directory trust relationship, Nagios monitoring dashboards, Zammad ticketing system setup, and the high-availability configuration for key services.</p>
+        </div>
+
+        <div class="photo-gallery">
+            <!-- Your first image is here -->
+            <img src="project1-screenshot.jpg" alt="Primary project screenshot" class="gallery-img">
+
+            <!-- 
+            INSTRUCTION: To add more photos, upload them to your repository
+            and then add new lines below like this:
+            <img src="your-new-image-name.jpg" alt="A description of the image" class="gallery-img">
+            -->
+            
+            <!-- Example for your next photos (currently disabled) -->
+            <!-- <img src="image2.jpg" alt="Nagios Monitoring Dashboard" class="gallery-img"> -->
+            <!-- <img src="image3.jpg" alt="Zammad Ticketing System UI" class="gallery-img"> -->
+            <!-- <img src="image4.jpg" alt="Microsoft Exchange DAG Configuration" class="gallery-img"> -->
+        </div>
+    </main>
+
+    <!-- The Modal (Lightbox) for viewing images larger -->
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var captionText = document.getElementById("caption");
+        var images = document.getElementsByClassName('gallery-img');
+
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        var span = document.getElementsByClassName("close-btn")[0];
+        span.onclick = function() { modal.style.display = "none"; }
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
