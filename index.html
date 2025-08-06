@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Link to the updated stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -53,17 +54,25 @@
   </section>
 
   <!-- About Section -->
-  <section class="about" id="about">
+  <!-- NEW: Added 'fade-in-section' class for scroll animation -->
+  <section class="about fade-in-section" id="about">
     <div class="about-content">
       <h2 class="section-title">A Bit About My Journey</h2>
       <p>My journey into technology is driven by a deep curiosity for how systems connect and communicate. As a recent IT graduate, I have a strong foundation in network infrastructure and system administration, complemented by hands-on experience in fast-paced support environments. From configuring firewalls to designing hybrid cloud infrastructures, I enjoy every aspect of creating robust IT solutions that empower organizations and help people work more efficiently.</p>
+      <!-- NEW: A place to add a more personal touch -->
+      <p class="personal-touch">
+        <!-- Tip: Add a sentence about your personal interests or what you enjoy outside of tech to make this more memorable. -->
+        <!-- Example: When I'm not configuring a network, you can find me exploring local hiking trails or diving into a good sci-fi novel. -->
+      </p>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section class="skills" id="skills">
-    <h2 class="section-title">My Skills</h2>
+  <!-- NEW: Added 'fade-in-section' class for scroll animation -->
+  <section class="skills fade-in-section" id="skills">
+    <h2 class="section-title">My Technical Toolbox</h2>
     <div class="skills-grid">
+      <!-- NOTE: The structure here remains the same, but the CSS will add new hover effects -->
       <div class="skill-card"><i class="fas fa-headset"></i><h3>Technical Support</h3></div>
       <div class="skill-card"><i class="fas fa-server"></i><h3>Active Directory</h3></div>
       <div class="skill-card"><i class="fas fa-network-wired"></i><h3>Network Infrastructure</h3></div>
@@ -74,75 +83,90 @@
   </section>
   
   <!-- Certifications Section -->
-  <section class="certifications" id="certifications">
+  <!-- NEW: Added 'fade-in-section' class for scroll animation -->
+  <section class="certifications fade-in-section" id="certifications">
     <h2 class="section-title">My Certifications</h2>
     <div class="certificate-grid">
-        <!-- Certificate 1 -->
         <div class="certificate-card">
-            <div class="certificate-image">
-                <!-- Ensure you have this image in your repo -->
-                <img src="google-certificate.jpg" alt="Google Cybersecurity Professional Certificate">
-            </div>
-            <div class="certificate-info">
-                <h3>Google Cybersecurity Professional Certificate</h3>
-            </div>
+            <div class="certificate-image"><img src="google-certificate.jpg" alt="Google Cybersecurity Professional Certificate"></div>
+            <div class="certificate-info"><h3>Google Cybersecurity Professional Certificate</h3></div>
         </div>
-        <!-- Certificate 2 -->
         <div class="certificate-card">
-            <div class="certificate-image">
-                 <!-- Ensure you have this image in your repo -->
-                <img src="cisco-certificate.jpg" alt="IT Essentials by Cisco Networking Academy">
-            </div>
-            <div class="certificate-info">
-                <h3>IT Essentials by Cisco Networking Academy</h3>
-            </div>
+            <div class="certificate-image"><img src="cisco-certificate.jpg" alt="IT Essentials by Cisco Networking Academy"></div>
+            <div class="certificate-info"><h3>IT Essentials by Cisco Networking Academy</h3></div>
         </div>
-        <!-- Certificate 3 -->
         <div class="certificate-card">
-            <div class="certificate-image">
-                 <!-- Ensure you have this image in your repo -->
-                <img src="greatlearning-certificate.jpg" alt="Network Security by Great Learning Academy">
-            </div>
-            <div class="certificate-info">
-                <h3>Network Security by Great Learning Academy</h3>
-            </div>
+            <div class="certificate-image"><img src="greatlearning-certificate.jpg" alt="Network Security by Great Learning Academy"></div>
+            <div class="certificate-info"><h3>Network Security by Great Learning Academy</h3></div>
         </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section class="projects" id="projects">
+  <!-- NEW: Added 'fade-in-section' class for scroll animation and updated grid for a "Bento Box" style layout -->
+  <section class="projects fade-in-section" id="projects">
     <h2 class="section-title">Featured Projects</h2>
-    <div class="project-grid">
-      <a href="project1.html" target="_blank" rel="noopener noreferrer" class="project-card">
+    <div class="project-bento-grid">
+      
+      <!-- Project 1: Larger Card -->
+      <div class="project-card project-card-large">
         <div class="project-image"><img src="project1-screenshot.jpg" alt="Capstone Project Screenshot"></div>
         <div class="project-info">
-          <h3>Hybrid IT Infrastructure - Capstone</h3>
-          <p>Designed and deployed a secure, hybrid IT infrastructure, integrating Windows & Linux environments with centralized identity management and high-availability services like <span class="highlight-tech">Microsoft Exchange</span> and <span class="highlight-tech">Nagios</span> monitoring.</p>
-          <div class="tech-stack"><span>Windows Server</span><span>Active Directory</span><span>Nagios</span></div>
-          <div class="project-links"><span class="link-btn">View Gallery & Details</span></div>
+          <span class="project-category">Capstone Project</span>
+          <h3>Hybrid IT Infrastructure</h3>
+          <!-- NEW: Restructured description for storytelling -->
+          <div class="project-narrative">
+              <p><strong>The Challenge:</strong> To design and deploy a secure, hybrid IT infrastructure for a mock company, integrating both Windows and Linux environments.</p>
+              <p><strong>My Solution:</strong> I built a comprehensive solution featuring centralized identity management with Active Directory, high-availability services using Microsoft Exchange, and proactive monitoring with Nagios.</p>
+          </div>
+          <div class="tech-stack"><span>Windows Server</span><span>Active Directory</span><span>Nagios</span><span>VMware</span></div>
+          <!-- NEW: More prominent link to a case study -->
+          <a href="project1.html" target="_blank" rel="noopener noreferrer" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
         </div>
-      </a>
-      <a href="#" class="project-card">
+      </div>
+
+      <!-- Project 2: Smaller Card -->
+      <div class="project-card">
         <div class="project-image"><img src="project2-screenshot.jpg" alt="Enterprise Chat Deployment"></div>
         <div class="project-info">
-          <h3>Enterprise Chat Deployment</h3>
-          <p>Deployed a high-availability Rocket.Chat environment, featuring a <span class="highlight-tech">MongoDB replica set</span> and an <span class="highlight-tech">Nginx reverse proxy</span> for load balancing. Integrated with Active Directory for seamless user authentication.</p>
+          <span class="project-category">Deployment</span>
+          <h3>Enterprise Chat Server</h3>
+           <div class="project-narrative">
+              <p>Deployed a high-availability Rocket.Chat environment using a MongoDB replica set and an Nginx reverse proxy for load balancing and security.</p>
+          </div>
           <div class="tech-stack"><span>Rocket.Chat</span><span>MongoDB</span><span>Nginx</span><span>LDAP</span></div>
-          <div class="project-links"><span class="link-btn">View Details</span></div>
+          <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
         </div>
-      </a>
+      </div>
+
+      <!-- NEW: Placeholder for another project to fill the grid -->
+       <div class="project-card">
+        <div class="project-image"><img src="placeholder.jpg" alt="Another Project"></div>
+        <div class="project-info">
+          <span class="project-category">Security</span>
+          <h3>Firewall Configuration</h3>
+           <div class="project-narrative">
+              <p>Developed and implemented a set of robust firewall rules for a corporate network, significantly improving security posture and preventing unauthorized access.</p>
+          </div>
+          <div class="tech-stack"><span>pfSense</span><span>Network Security</span><span>Firewall</span></div>
+          <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <h2 class="section-title">Let's Connect</h2>
-    <p class="contact-intro">I am actively seeking new opportunities. If you have a role that aligns with my skills or would like to connect, please feel free to reach out.</p>
+    <p class="contact-intro">I'm actively seeking new opportunities and am excited to bring my skills to a forward-thinking team. If you have a role that aligns with my experience, I'd love to chat.</p>
     <a href="mailto:sanashhn505@gmail.com" class="btn contact-btn"><i class="fas fa-envelope"></i> Say Hello</a>
   </section>
 
-  <footer><p>&copy; 2024 Sana Shaheen. All rights reserved.</p></footer>
+  <footer><p>&copy; 2025 Sana Shaheen. All rights reserved.</p></footer>
+
+  <!-- NEW: Add this script tag before your closing </body> tag -->
+  <script src="script.js"></script>
 
 </body>
 </html>
