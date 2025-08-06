@@ -1,119 +1,184 @@
 /* --- CSS RESET & FONT IMPORT --- */
 :root {
-  --bg-color: #0d0d0d;
-  --primary-color: #e63946;
-  --secondary-color: #a8dadc;
-  --text-color: #f1faee;
+  /* NEW: Slightly adjusted colors for more vibrancy */
+  --bg-color: #080a0f; /* Slightly deeper navy-black */
+  --primary-color: #f72585; /* Vibrant Pink - A "dopamine" color */
+  --secondary-color: #4cc9f0; /* Bright Cyan */
+  --text-color: #edf2f4;
   --card-bg-color: rgba(29, 53, 87, 0.3);
-  --border-color: rgba(168, 218, 220, 0.2);
+  --border-color: rgba(76, 201, 240, 0.2);
   --font-primary: 'Inter', sans-serif;
   --font-secondary: 'Roboto Mono', monospace;
-  --font-cursive: 'Great Vibes', cursive; /* Cursive Font */
+  --font-cursive: 'Great Vibes', cursive;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { background-color: var(--bg-color); color: var(--text-color); font-family: var(--font-primary); line-height: 1.6; }
 
+/* --- NEW: Scroll Animation --- */
+/* This class will be added by JavaScript to trigger the animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* --- GENERAL STYLES --- */
 section { padding: 100px 8%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-.section-title { font-size: 2.8rem; margin-bottom: 3rem; color: var(--text-color); text-align: center; }
+.section-title { font-size: 2.8rem; margin-bottom: 3rem; text-align: center; color: var(--text-color); }
 
 /* --- HEADER --- */
 header {
   position: fixed; top: 0; width: 100%; height: 80px; padding: 0 8%; display: flex;
-  justify-content: space-between; align-items: center; background: rgba(13, 13, 13, 0.7);
+  justify-content: space-between; align-items: center; background: rgba(8, 10, 15, 0.7);
   backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000;
 }
-/* FIX: Cursive font style for the logo */
 .logo {
-    font-family: var(--font-cursive);
-    font-size: 2.8rem;
-    font-weight: 400;
-    color: var(--text-color);
+    font-family: var(--font-cursive); font-size: 2.8rem; font-weight: 400; color: var(--text-color);
 }
-nav a { color: var(--text-color); margin-left: 2rem; font-size: 1rem; transition: color 0.3s ease; position: relative; }
-nav a::after { content: ''; position: absolute; width: 0; height: 2px; background: var(--primary-color); left: 0; bottom: -5px; transition: width 0.3s ease; }
+nav a { color: var(--text-color); margin-left: 2rem; font-size: 1rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px;}
+nav a::after { content: ''; position: absolute; width: 0; height: 2px; background: var(--primary-color); left: 50%; transform: translateX(-50%); bottom: 0; transition: width 0.3s ease; }
 nav a:hover::after, nav a.active::after { width: 100%; }
+nav a:hover { color: var(--primary-color); }
 
 /* --- HOME SECTION --- */
 .home { flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
 .home-img { flex: 1 1 300px; display: flex; justify-content: center; align-items: center; }
-.home-img img { width: 350px; height: 350px; object-fit: cover; border-radius: 50%; border: 5px solid var(--border-color); box-shadow: 0 0 40px rgba(230, 57, 70, 0.4); }
+/* NEW: Added gradient border and subtle animation */
+.home-img img {
+  width: 350px; height: 350px; object-fit: cover; border-radius: 50%;
+  border: 5px solid transparent;
+  background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+              linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
+  box-shadow: 0 0 50px rgba(247, 37, 133, 0.4);
+  animation: glow 5s ease-in-out infinite;
+}
+/* NEW: Keyframe animation for glowing effect */
+@keyframes glow {
+  0% { box-shadow: 0 0 50px rgba(247, 37, 133, 0.4); }
+  50% { box-shadow: 0 0 70px rgba(76, 201, 240, 0.6); }
+  100% { box-shadow: 0 0 50px rgba(247, 37, 133, 0.4); }
+}
 .home-content { flex: 1 1 500px; }
-.home-content h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; color: var(--text-color); margin-bottom: 0.5rem; }
+.home-content h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.5rem; }
 .home-content .subtitle { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 500; }
-.home-content .intro { font-size: 1.1rem; color: var(--text-color); max-width: 500px; }
+.home-content .intro { font-size: 1.1rem; max-width: 500px; }
 .social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
+/* NEW: Enhanced hover effect for social icons */
 .social-icons a { width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; color: var(--secondary-color); border: 1px solid var(--border-color); border-radius: 50%; font-size: 1.2rem; transition: all 0.3s ease; }
-.social-icons a:hover { color: var(--bg-color); background-color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-3px); }
+.social-icons a:hover { color: var(--bg-color); background-color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 15px rgba(247, 37, 133, 0.3); }
 .action-buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
-.btn { display: inline-block; padding: 12px 28px; background-color: var(--primary-color); color: var(--bg-color); border: 2px solid var(--primary-color); border-radius: 8px; font-weight: 700; transition: all 0.3s ease; font-family: var(--font-primary); }
-.btn:hover { background-color: transparent; color: var(--primary-color); }
+.btn { display: inline-block; padding: 12px 28px; background-color: var(--primary-color); color: #fff; border: 2px solid var(--primary-color); border-radius: 8px; font-weight: 700; transition: all 0.3s ease; }
+.btn:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
+.btn-secondary { background-color: transparent; color: var(--secondary-color); border-color: var(--secondary-color); }
+.btn-secondary:hover { background-color: var(--secondary-color); color: var(--bg-color); }
 
-/* FIX: Button color consistency. Both are now red. */
-.btn-secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-.btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-}
-
-/* FIX: About section centered again */
-.about {
-    background-color: #111;
-    justify-content: center;
-}
-.about-content {
-    max-width: 800px;
-    text-align: center;
-}
-.about p { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 1rem; }
+/* --- ABOUT SECTION --- */
+.about { background-color: #0C0E14; }
+.about-content { max-width: 800px; text-align: center; }
+.about p { font-size: 1.1rem; color: var(--text-color); margin-bottom: 1rem; opacity: 0.9; }
+.about p.personal-touch { color: var(--secondary-color); font-style: italic; font-size: 1rem; margin-top: 1.5rem; }
 
 /* --- SKILLS & CERTIFICATIONS --- */
-.skills { background-color: #0d0d0d; }
-.certifications { background-color: #111; }
+.skills { background-color: var(--bg-color); }
+.certifications { background-color: #0C0E14; }
 .skills-grid, .certificate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.skill-card { background-color: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
-.skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-color: var(--secondary-color); }
-.skill-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+/* NEW: More pronounced hover effect for skill cards */
+.skill-card { background-color: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s ease; position: relative; top: 0; }
+.skill-card:hover { top: -8px; box-shadow: 0 15px 25px rgba(0,0,0,0.4); border-color: var(--secondary-color); background: rgba(76, 201, 240, 0.1); }
+.skill-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; transition: transform 0.3s ease; }
+.skill-card:hover i { transform: scale(1.2) rotate(-10deg); }
 .skill-card h3 { font-size: 1.1rem; font-weight: 500; }
-
 .certificate-card { background: var(--card-bg-color); border-radius: 10px; border: 1px solid var(--border-color); overflow: hidden; text-align: center; transition: all 0.3s ease-in-out; }
-.certificate-card:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(168, 218, 220, 0.3); }
-.certificate-image img { width: 100%; height: auto; display: block; }
+.certificate-card:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(76, 201, 240, 0.3); }
+.certificate-image img { width: 100%; height: auto; display: block; filter: saturate(0.8); transition: filter 0.3s ease; }
+.certificate-card:hover .certificate-image img { filter: saturate(1); }
 .certificate-info { padding: 1.5rem; }
 .certificate-info h3 { font-size: 1.1rem; font-weight: 500; color: var(--secondary-color); }
 
-/* --- PROJECTS --- */
-.projects .section-title { text-align: center; } /* Reverted to center for consistency */
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-.project-card { background: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.4s ease; color: var(--text-color); }
-.project-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(230, 57, 70, 0.3); }
-.project-image img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.4s ease; }
-.project-card:hover .project-image img { transform: scale(1.05); }
+/* --- PROJECTS (NEW BENTO GRID) --- */
+/* NEW: Using CSS Grid for a "Bento Box" layout */
+.project-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px; /* Define a base row height */
+    gap: 1.5rem;
+}
+.project-card {
+    background: linear-gradient(135deg, rgba(29, 53, 87, 0.5), rgba(29, 53, 87, 0.2));
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    color: var(--text-color);
+    position: relative;
+    grid-row: span 1; /* Default card spans 1 row */
+    grid-column: span 1; /* Default card spans 1 column */
+}
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(247, 37, 133, 0.3);
+    border-color: var(--primary-color);
+}
+/* NEW: Style for the large card in the bento grid */
+.project-card-large {
+    grid-column: span 2; /* Make this card span 2 columns */
+    grid-row: span 2; /* Make this card span 2 rows */
+}
+.project-image { width: 100%; height: 50%; overflow: hidden; }
+.project-card-large .project-image { height: 60%; } /* More image height for large card */
+.project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, opacity 0.4s ease; }
+.project-card:hover .project-image img { transform: scale(1.05); opacity: 0.9; }
 .project-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-.project-info h3 { color: var(--primary-color); font-size: 1.3rem; margin-bottom: 0.5rem; }
-.project-info p { font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1; }
-.project-info .highlight-tech { color: var(--secondary-color); font-weight: 500; }
-.tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-.tech-stack span { background-color: rgba(168, 218, 220, 0.1); color: var(--secondary-color); padding: 0.3rem 0.6rem; border-radius: 5px; font-size: 0.8rem; font-family: var(--font-secondary); }
-.project-links .link-btn { color: var(--primary-color); font-weight: 700; font-size: 0.9rem; transition: color 0.3s ease; display: inline-block; margin-top: auto; }
-.project-card:hover .link-btn { text-decoration: underline; }
+.project-category { font-family: var(--font-secondary); color: var(--primary-color); font-size: 0.8rem; margin-bottom: 0.5rem; display: block; }
+.project-info h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.project-narrative p { font-size: 0.95rem; margin-bottom: 1rem; opacity: 0.85; }
+.project-narrative p strong { color: var(--secondary-color); }
+.tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 1rem; }
+.tech-stack span { background-color: rgba(76, 201, 240, 0.1); color: var(--secondary-color); padding: 0.4rem 0.8rem; border-radius: 5px; font-size: 0.8rem; font-family: var(--font-secondary); }
+.project-link { color: var(--primary-color); font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; display: inline-block; margin-top: 1rem; }
+.project-link i { margin-left: 0.3rem; transition: transform 0.3s ease; }
+.project-link:hover { text-decoration: underline; }
+.project-link:hover i { transform: translateX(5px); }
 
 /* --- CONTACT & FOOTER --- */
 .contact { text-align: center; justify-content: center; align-items: center; }
 .contact-intro { max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem; }
 .contact-btn { font-size: 1.1rem; }
 .contact-btn i { margin-right: 0.5rem; }
-footer { text-align: center; padding: 2rem 8%; background-color: #111; border-top: 1px solid var(--border-color); }
+footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border-top: 1px solid var(--border-color); }
 
 /* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .project-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-card-large {
+        grid-column: span 2; /* Full width on medium screens */
+        grid-row: span 2;
+    }
+}
+
 @media (max-width: 768px) {
-  nav { display: none; }
-  .home { text-align: center; flex-direction: column-reverse; }
+  header { padding: 0 5%; }
+  nav { display: none; /* Consider adding a hamburger menu for mobile */ }
+  .home { text-align: center; flex-direction: column-reverse; padding-top: 120px; }
   .home-content { text-align: center; }
+  .home-content h1 { font-size: 3rem; }
   .action-buttons, .social-icons { justify-content: center; }
+  .project-bento-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-auto-rows: auto;
+  }
+  .project-card, .project-card-large {
+    grid-column: span 1; /* All cards take full width */
+    grid-row: span 1;
+  }
+  .project-image { height: 220px; }
 }
