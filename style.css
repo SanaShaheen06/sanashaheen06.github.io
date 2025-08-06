@@ -74,8 +74,16 @@ nav a:hover { color: var(--primary-color); }
 .action-buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
 .btn { display: inline-block; padding: 12px 28px; background-color: var(--primary-color); color: #fff; border: 2px solid var(--primary-color); border-radius: 8px; font-weight: 700; transition: all 0.3s ease; }
 .btn:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
-.btn-secondary { background-color: transparent; color: var(--secondary-color); border-color: var(--secondary-color); }
-.btn-secondary:hover { background-color: var(--secondary-color); color: var(--bg-color); }
+/* --- THIS IS THE NEW, CORRECTED CODE --- */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color); /* USE RED */
+    border-color: var(--primary-color); /* USE RED */
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color); /* USE RED */
+    color: #fff; /* Text becomes white on hover */
+}
 
 
 /* --- ABOUT SECTION --- */
