@@ -80,7 +80,7 @@ nav a:hover { color: var(--primary-color); }
   100% { box-shadow: 0 0 50px rgba(247, 37, 133, 0.4); }
 }
 .home-content { flex: 1 1 500px; }
-.home-content h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.5rem; }
+.home-content h1 { font-size: 5rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; }
 .home-content .subtitle { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 500; }
 .home-content .intro { font-size: 1.1rem; max-width: 500px; }
 .social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
