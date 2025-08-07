@@ -1,156 +1,299 @@
-/*
-=================================================
-  STYLES FOR PROJECT DETAIL PAGES (project-style.css)
-=================================================
+/* --- Add this block to the TOP of project-style.css --- */
+
+/* 
+  Project Page Reset
+  This overrides the `min-height: 100vh` from the main stylesheet,
+  which was causing the large gaps between sections.
 */
-
-/* --- Page Layout & Header Fix --- */
-.project-detail-body {
-  /* Pushes all content down to permanently clear the fixed header */
-  padding-top: 60px; 
-}
-
-/* This overrides the `min-height: 100vh` from the main stylesheet, which was causing large gaps. */
 .project-detail-container section {
-  min-height: auto;
-  padding: 0; 
-  margin-bottom: 3.5rem; /* Creates consistent spacing between sections */
+  min-height: auto; /* Let sections be as tall as their content */
+  padding: 0; /* Remove any global padding */
+  margin-bottom: 3rem; /* Add back some controlled spacing */
 }
 
-/* --- Simplified Header for Project Pages --- */
-.project-header {
-  height: 60px;
-  background: rgba(8, 10, 15, 0.7); /* Match main header */
-  backdrop-filter: blur(10px); /* Match main header */
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  padding: 0 8%;
-  position: fixed; /* Fix header to the top */
-  top: 0;
-  left: 0;
+.project-detail-container section:last-child {
+    margin-bottom: 0; /* No extra space after the very last section */
+}
+/* --- CSS RESET & FONT IMPORT --- */
+:root {
+  /* NEW: Slightly adjusted colors for more vibrancy */
+  --bg-color: #080a0f; /* Slightly deeper navy-black */
+  --primary-color: #e63946; /* Strong Red */
+  --secondary-color: #4cc9f0; /* Bright Cyan */
+  --text-color: #edf2f4;
+  --card-bg-color: rgba(29, 53, 87, 0.3);
+  --border-color: rgba(76, 201, 240, 0.2);
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Roboto Mono', monospace;
+  --font-cursive: 'Great Vibes', cursive;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { background-color: var(--bg-color); color: var(--text-color); font-family: var(--font-primary); line-height: 1.6; }
+
+/* --- NEW: Scroll Animation --- */
+/* This class will be added by JavaScript to trigger the animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- GENERAL STYLES --- */
+section { padding: 100px 8%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+.section-title { font-size: 2.8rem; margin-bottom: 3rem; text-align: center; color: var(--text-color); }
+
+/* --- HEADER --- */
+header {
+  position: fixed; top: 0; width: 100%; height: 80px; padding: 0 8%; display: flex;
+  justify-content: space-between; align-items: center; background: rgba(8, 10, 15, 0.7);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000;
+}
+.logo {
+    font-family: var(--font-cursive); font-size: 2.8rem; font-weight: 400; color: var(--text-color);
+}
+nav a { color: var(--text-color); margin-left: 2rem; font-size: 1rem; transition: color 0.3s ease; position: relative; padding-bottom: 5px;}
+nav a::after { content: ''; position: absolute; width: 0; height: 2px; background: var(--primary-color); left: 50%; transform: translateX(-50%); bottom: 0; transition: width 0.3s ease; }
+nav a:hover::after, nav a.active::after { width: 100%; }
+nav a:hover { color: var(--primary-color); }
+
+/* --- HOME SECTION --- */
+.home { flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
+.home-img { flex: 1 1 300px; display: flex; justify-content: center; align-items: center; }
+/* NEW: Added gradient border and subtle animation */
+.home-img img {
+  width: 350px; height: 350px; object-fit: cover; border-radius: 50%;
+  border: 5px solid transparent;
+  background: linear-gradient(var(--bg-color), var(--bg-color)) padding-box,
+              linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
+  box-shadow: 0 0 50px rgba(247, 37, 133, 0.4);
+  animation: glow 5s ease-in-out infinite;
+}
+/* NEW: Keyframe animation for glowing effect */
+@keyframes glow {
+  0% { box-shadow: 0 0 50px rgba(247, 37, 133, 0.4); }
+  50% { box-shadow: 0 0 70px rgba(76, 201, 240, 0.6); }
+  100% { box-shadow: 0 0 50px rgba(247, 37, 133, 0.4); }
+}
+.home-content { flex: 1 1 500px; }
+.home-content h1 { font-size: 5rem; font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; }
+.home-content .subtitle { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 500; }
+.home-content h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.5rem; }
+.home-content .subtitle { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600; }
+.home-content .intro { font-size: 1.1rem; max-width: 500px; }
+.social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
+/* NEW: Enhanced hover effect for social icons */
+.social-icons a { width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; color: var(--secondary-color); border: 1px solid var(--border-color); border-radius: 50%; font-size: 1.2rem; transition: all 0.3s ease; }
+.social-icons a:hover { color: var(--bg-color); background-color: var(--primary-color); border-color: var(--primary-color); transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 15px rgba(247, 37, 133, 0.3); }
+.action-buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.btn { display: inline-block; padding: 12px 28px; background-color: var(--primary-color); color: #fff; border: 2px solid var(--primary-color); border-radius: 8px; font-weight: 700; transition: all 0.3s ease; }
+.btn:hover { background-color: transparent; color: var(--primary-color); transform: translateY(-3px); }
+/* --- THIS IS THE NEW, CORRECTED CODE --- */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color); /* USE RED */
+    border-color: var(--primary-color); /* USE RED */
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color); /* USE RED */
+    color: #fff; /* Text becomes white on hover */
+}
+
+
+/* --- ABOUT SECTION --- */
+.about { 
+  background-color: #0C0E14; 
+  align-items: center; /* This is the line that centers the content horizontally */
+}
+
+.about-content { 
+  max-width: 800px; 
+  text-align: center; 
+}
+
+.about p { 
+  font-size: 1.1rem; 
+  color: var(--text-color); 
+  margin-bottom: 1rem; 
+  opacity: 0.9; 
+}
+
+.about p.personal-touch { 
+  color: var(--secondary-color); 
+  font-style: italic; 
+  font-size: 1rem; 
+  margin-top: 1.5rem; 
+}
+
+
+
+/* --- SKILLS & CERTIFICATIONS --- */
+.skills { background-color: var(--bg-color); }
+.certifications { background-color: #0C0E14; }
+.skills-grid, .certificate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+/* NEW: More pronounced hover effect for skill cards */
+.skill-card { background-color: var(--card-bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s ease; position: relative; top: 0; }
+.skill-card:hover { top: -8px; box-shadow: 0 15px 25px rgba(0,0,0,0.4); border-color: var(--secondary-color); background: rgba(76, 201, 240, 0.1); }
+.skill-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; transition: transform 0.3s ease; }
+.skill-card:hover i { transform: scale(1.2) rotate(-10deg); }
+.skill-card h3 { font-size: 1.1rem; font-weight: 500; }
+.certificate-card { background: var(--card-bg-color); border-radius: 10px; border: 1px solid var(--border-color); overflow: hidden; text-align: center; transition: all 0.3s ease-in-out; }
+.certificate-card:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(76, 201, 240, 0.3); }
+/* --- This is the new, corrected code for your certificate images --- */
+.certificate-image {
+  /* We give the image container a fixed, consistent height */
+  height: 220px; 
+  overflow: hidden; /* Hides any part of the image that might overflow */
+}
+
+.certificate-image img {
   width: 100%;
-  z-index: 1000;
+  height: 100%; /* Tells the image to fill the container's height */
+  display: block;
+
+  /* The magic property that fixes everything! */
+  object-fit: cover; 
+
+  filter: saturate(0.8);
+  transition: filter 0.3s ease;
+}
+.certificate-card:hover .certificate-image img { filter: saturate(1); }
+.certificate-info { padding: 1.5rem; }
+.certificate-info h3 { font-size: 1.1rem; font-weight: 500; color: var(--secondary-color); }
+
+/* --- PROJECTS (NEW BENTO GRID) --- */
+/* NEW: Using CSS Grid for a "Bento Box" layout */
+.project-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px; /* Define a base row height */
+    gap: 1.5rem;
+}
+.project-card {
+    background: linear-gradient(135deg, rgba(29, 53, 87, 0.5), rgba(29, 53, 87, 0.2));
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    color: var(--text-color);
+    position: relative;
+    grid-row: span 1; /* Default card spans 1 row */
+    grid-column: span 1; /* Default card spans 1 column */
+}
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(247, 37, 133, 0.3);
+    border-color: var(--primary-color);
 }
 
-.back-link {
-  color: var(--secondary-color);
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+/* Add this new rule to your style.css in the projects section */
+
+.project-bento-grid .project-card:not(.project-card-large) {
+    grid-row: span 2; /* Make small cards span 2 base rows for more height */
 }
 
-.back-link i {
-  margin-right: 0.5rem;
+.project-bento-grid .project-card:not(.project-card-large) .project-image {
+    height: 180px; /* Give all small cards a consistent image height */
 }
 
-.back-link:hover {
-  color: var(--primary-color);
+/* NEW: Style for the large card in the bento grid */
+.project-card-large {
+    grid-column: span 2; /* Make this card span 2 columns */
+    grid-row: span 2; /* Make this card span 2 rows */
 }
+.project-image { width: 100%; height: 50%; overflow: hidden; }
+.project-card-large .project-image { height: 60%; } /* More image height for large card */
+.project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, opacity 0.4s ease; }
+.project-card:hover .project-image img { transform: scale(1.05); opacity: 0.9; }
+/* Find this existing rule in your style.css file */
+.project-info {
+  padding: 1.5rem;
+  flex-grow: 1;
 
-
-/* --- Main Content Container --- */
-.project-detail-container {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-}
-
-/* --- Big Title Section --- */
-.project-detail-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.project-detail-header h1 {
-  font-size: 3.5rem;
+  /* ADD THESE TWO LINES */
+  display: flex;
+  flex-direction: column;
+}.project-category { font-family: var(--font-secondary); color: var(--primary-color); font-size: 0.8rem; margin-bottom: 0.5rem; display: block; }
+.project-info h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+/* Find this existing rule */
+.project-narrative p {
+  font-size: 0.95rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  opacity: 0.85;
+
+  /* ADD THIS LINE */
+  flex-grow: 1; /* This makes the text area expand */
+}.project-narrative p strong { color: var(--secondary-color); }
+.tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 1rem; }
+.tech-stack span { background-color: rgba(76, 201, 240, 0.1); color: var(--secondary-color); padding: 0.4rem 0.8rem; border-radius: 5px; font-size: 0.8rem; font-family: var(--font-secondary); }
+.project-link { color: var(--primary-color); font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; display: inline-block; margin-top: 1rem; }
+.project-link i { margin-left: 0.3rem; transition: transform 0.3s ease; }
+.project-link:hover { text-decoration: underline; }
+.project-link:hover i { transform: translateX(5px); }
+
+/* --- CONTACT & FOOTER --- */
+.contact { text-align: center; justify-content: center; align-items: center; }
+.contact-intro { max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem; }
+.contact-btn { font-size: 1.1rem; }
+.contact-btn i { margin-right: 0.5rem; }
+footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border-top: 1px solid var(--border-color); }
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .project-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-card-large {
+        grid-column: span 2; /* Full width on medium screens */
+        grid-row: span 2;
+    }
 }
 
-.project-detail-header .project-summary {
-  font-size: 1.2rem;
-  color: var(--secondary-color);
-  line-height: 1.7;
-}
-
-/* --- Role and Tech Stack Section --- */
-.project-meta {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
-  gap: 2rem;
-  background-color: var(--card-bg-color);
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  margin-bottom: 4rem;
-}
-/* Two columns on larger screens */
-@media (min-width: 768px) {
-  .project-meta {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+@media (max-width: 768px) {
+  header { padding: 0 5%; }
+  nav { display: none; /* Consider adding a hamburger menu for mobile */ }
+  .home { text-align: center; flex-direction: column-reverse; padding-top: 120px; }
+  .home-content { text-align: center; }
+  .home-content h1 { font-size: 3rem; }
+  .action-buttons, .social-icons { justify-content: center; }
+  .project-bento-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-auto-rows: auto;
   }
+  .project-card, .project-card-large {
+    grid-column: span 1; /* All cards take full width */
+    grid-row: span 1;
+  }
+  .project-image { height: 220px; }
 }
 
-.meta-item h3 {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 0.5rem;
-}
+/* --- Add this to the end of project-style.css --- */
 
-.meta-item ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.meta-item ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-.meta-item .tech-stack {
-    padding-top: 0;
-}
-
-/* --- Full Story Section --- */
-.project-narrative-full h2 {
-  font-size: 2rem;
-  color: var(--secondary-color);
-  margin-bottom: 1.5rem;
-}
-
-.project-narrative-full p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-/* --- Results Box Styling --- */
 .project-results {
-  background-color: rgba(29, 53, 87, 0.5);
+  background-color: rgba(29, 53, 87, 0.5); /* A slightly different background to stand out */
   border-left: 4px solid var(--primary-color);
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 0 8px 8px 0;
 }
-.project-results ul { list-style-type: none; padding-left: 0; }
-.project-results ul li { margin-bottom: 0.75rem; font-size: 1.1rem; line-height: 1.6; }
 
-/* --- PDF Download Button --- */
-.project-download-link {
-    text-align: center;
-    margin: 3rem 0;
+.project-results h2 {
+  margin-bottom: 1rem;
 }
-.project-download-link .btn i { margin-right: 0.75rem; }
 
-/* --- Image Gallery --- */
-.project-gallery { margin-top: 4rem; }
-.project-gallery h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--secondary-color); }
-.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-@media (min-width: 768px) { .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
-.gallery-item img { width: 100%; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease; }
-.gallery-item img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(76, 201, 240, 0.3); }
-.gallery-item .caption { text-align: center; font-size: 0.9rem; margin-top: 0.75rem; color: var(--text-color); opacity: 0.8; }
+.project-results ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-results ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
