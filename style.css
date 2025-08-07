@@ -347,6 +347,7 @@ footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border
 
 /* --- NEW: Make specific section titles red --- */
 .about .section-title,
+.skills .section-title,
 .certifications .section-title,
 .projects .section-title,
 .contact .section-title {
