@@ -1,4 +1,3 @@
-<body class="project-detail-body">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Details | Rocket.Chat Deployment</title>
   
-  <!-- Reusing the same styles and fonts for consistency -->
+  <!-- All CSS and Font links go in the head -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   
+  <!-- Main stylesheet and project-specific stylesheet -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="project-style.css" /> <!-- Same project style for a consistent look -->
+  <link rel="stylesheet" href="project-style.css" />
 </head>
-<body>
+
+<!-- There is only ONE body tag, with the correct class -->
+<body class="project-detail-body">
 
   <header class="project-header">
     <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
@@ -25,6 +27,7 @@
 
     <!-- Section 1: Project Overview -->
     <section class="project-detail-header">
+      <span class="project-category">Group Infrastructure Project</span>
       <h1>🚀 Rocket.Chat Enterprise Deployment</h1>
       <p class="project-summary">
         Designed and deployed a secure, high-availability Rocket.Chat platform for internal enterprise communication. The project simulated a real-world IT infrastructure with centralized authentication, fault tolerance, and secure messaging.
@@ -66,7 +69,6 @@
         <p>I began by configuring two Windows Server 2019 machines as Domain Controllers to handle LDAP authentication and DNS. For database redundancy, I deployed a three-server MongoDB replica set on Ubuntu, ensuring that if one database server failed, the others would take over instantly. Next, I set up two separate Ubuntu servers for the Rocket.Chat application itself, using PM2 to manage the Node.js processes and ensure they were always running.</p>
         <p>To secure the platform and distribute user traffic, I installed and configured NGINX as a reverse proxy. This handled all incoming HTTPS traffic, encrypting communications, and load-balancing requests between the two Rocket.Chat servers. Finally, I integrated Rocket.Chat with Active Directory using LDAP, which allowed users to log in with their existing company credentials.</p>
 
-        <!-- NEW: Added a dedicated results section -->
         <div class="project-results">
             <h2>🧪 Testing & Results</h2>
             <ul>
@@ -86,19 +88,14 @@
       <h2>Visual Showcase</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
-            <!-- IMPORTANT: Replace with a real screenshot! -->
             <img src="project2-screenshot.jpg" alt="The Rocket.Chat user interface.">
             <p class="caption">The Rocket.Chat Platform in Action</p>
         </div>
-        
         <div class="gallery-item">
-            <!-- IMPORTANT: Replace with a real screenshot! -->
             <img src="project2-screenshot2.jpg" alt="A diagram showing the architecture.">
             <p class="caption">Architecture Diagram</p>
         </div>
-        
         <div class="gallery-item">
-            <!-- IMPORTANT: Replace with a real screenshot! -->
             <img src="project2-screenshot3.png" alt="Testing Failover cluster for Rocket Chat service.">
             <p class="caption">Testing Failover cluster for Rocket Chat service.</p>
         </div>
