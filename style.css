@@ -125,7 +125,24 @@ nav a:hover { color: var(--primary-color); }
 .skill-card h3 { font-size: 1.1rem; font-weight: 500; }
 .certificate-card { background: var(--card-bg-color); border-radius: 10px; border: 1px solid var(--border-color); overflow: hidden; text-align: center; transition: all 0.3s ease-in-out; }
 .certificate-card:hover { transform: translateY(-8px); box-shadow: 0 0 25px rgba(76, 201, 240, 0.3); }
-.certificate-image img { width: 100%; height: auto; display: block; filter: saturate(0.8); transition: filter 0.3s ease; }
+/* --- This is the new, corrected code for your certificate images --- */
+.certificate-image {
+  /* We give the image container a fixed, consistent height */
+  height: 220px; 
+  overflow: hidden; /* Hides any part of the image that might overflow */
+}
+
+.certificate-image img {
+  width: 100%;
+  height: 100%; /* Tells the image to fill the container's height */
+  display: block;
+  
+  /* The magic property that fixes everything! */
+  object-fit: cover; 
+
+  filter: saturate(0.8);
+  transition: filter 0.3s ease;
+}
 .certificate-card:hover .certificate-image img { filter: saturate(1); }
 .certificate-info { padding: 1.5rem; }
 .certificate-info h3 { font-size: 1.1rem; font-weight: 500; color: var(--secondary-color); }
