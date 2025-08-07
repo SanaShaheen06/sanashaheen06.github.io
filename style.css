@@ -1,138 +1,156 @@
-/* --- PROJECTS (NEW BENTO GRID) --- */
-.project-bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px;
-    gap: 1.5rem;
-}
-
-.project-card {
-    background: linear-gradient(135deg, rgba(29, 53, 87, 0.5), rgba(29, 53, 87, 0.2));
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s ease;
-    color: var(--text-color);
-    position: relative;
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.project-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 40px rgba(230, 57, 70, 0.3); /* Adjusted red shadow */
-    border-color: var(--primary-color);
-}
-
-.project-card-large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.project-bento-grid .project-card:not(.project-card-large) {
-    grid-row: span 2;
-}
-
-.project-bento-grid .project-card:not(.project-card-large) .project-image {
-    height: 180px;
-}
-
-.project-image {
-    width: 100%;
-    height: 50%;
-    overflow: hidden;
-}
-
-.project-card-large .project-image {
-    height: 60%;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
 /*
-  THIS IS THE SECTION THAT FIXES YOUR CARD HEIGHTS
+=================================================
+  STYLES FOR PROJECT DETAIL PAGES (project-style.css)
+=================================================
 */
-.project-info {
-  padding: 1.5rem;
-  flex-grow: 1; /* Allows this container to grow */
-  display: flex; /* Sets up the flexbox layout */
-  flex-direction: column; /* Stacks items vertically */
+
+/* --- Page Layout & Header Fix --- */
+.project-detail-body {
+  /* Pushes all content down to permanently clear the fixed header */
+  padding-top: 60px; 
 }
 
-.project-category {
-    font-family: var(--font-secondary);
-    color: var(--primary-color);
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    display: block;
+/* This overrides the `min-height: 100vh` from the main stylesheet, which was causing large gaps. */
+.project-detail-container section {
+  min-height: auto;
+  padding: 0; 
+  margin-bottom: 3.5rem; /* Creates consistent spacing between sections */
 }
 
-.project-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+/* --- Simplified Header for Project Pages --- */
+.project-header {
+  height: 60px;
+  background: rgba(8, 10, 15, 0.7); /* Match main header */
+  backdrop-filter: blur(10px); /* Match main header */
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  position: fixed; /* Fix header to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.project-narrative {
-    flex-grow: 1; /* This is the key: it makes the text area expand */
+.back-link {
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-.project-narrative p {
-  font-size: 0.95rem;
+.back-link i {
+  margin-right: 0.5rem;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+
+/* --- Main Content Container --- */
+.project-detail-container {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+/* --- Big Title Section --- */
+.project-detail-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.project-detail-header h1 {
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  opacity: 0.85;
+  color: var(--text-color);
 }
 
-.project-narrative p strong {
-    color: var(--secondary-color);
+.project-detail-header .project-summary {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  line-height: 1.7;
 }
 
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: auto; /* Pushes this to the bottom */
-    padding-top: 1rem;
+/* --- Role and Tech Stack Section --- */
+.project-meta {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 2rem;
+  background-color: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 4rem;
+}
+/* Two columns on larger screens */
+@media (min-width: 768px) {
+  .project-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
 }
 
-.tech-stack span {
-    background-color: rgba(76, 201, 240, 0.1);
-    color: var(--secondary-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-family: var(--font-secondary);
+.meta-item h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
 }
 
-.project-link {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-top: 1rem;
+.meta-item ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.project-link i {
-    margin-left: 0.3rem;
-    transition: transform 0.3s ease;
+.meta-item ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.meta-item .tech-stack {
+    padding-top: 0;
 }
 
-.project-link:hover {
-    text-decoration: underline;
+/* --- Full Story Section --- */
+.project-narrative-full h2 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
 }
 
-.project-link:hover i {
-    transform: translateX(5px);
+.project-narrative-full p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
+
+/* --- Results Box Styling --- */
+.project-results {
+  background-color: rgba(29, 53, 87, 0.5);
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.project-results ul { list-style-type: none; padding-left: 0; }
+.project-results ul li { margin-bottom: 0.75rem; font-size: 1.1rem; line-height: 1.6; }
+
+/* --- PDF Download Button --- */
+.project-download-link {
+    text-align: center;
+    margin: 3rem 0;
+}
+.project-download-link .btn i { margin-right: 0.75rem; }
+
+/* --- Image Gallery --- */
+.project-gallery { margin-top: 4rem; }
+.project-gallery h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--secondary-color); }
+.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 768px) { .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } }
+.gallery-item img { width: 100%; border-radius: 8px; border: 1px solid var(--border-color); transition: transform 0.3s ease; }
+.gallery-item img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(76, 201, 240, 0.3); }
+.gallery-item .caption { text-align: center; font-size: 0.9rem; margin-top: 0.75rem; color: var(--text-color); opacity: 0.8; }
