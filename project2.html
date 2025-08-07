@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details | Rocket.Chat Deployment</title>
+  
+  <!-- Reusing the same styles and fonts for consistency -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-style.css" /> <!-- Same project style for a consistent look -->
+</head>
+<body>
+
+  <header class="project-header">
+    <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </header>
+
+  <main class="project-detail-container">
+
+    <!-- Section 1: Project Overview -->
+    <section class="project-detail-header">
+      <span class="project-category">Group Infrastructure Project</span>
+      <h1>🚀 Rocket.Chat Enterprise Deployment</h1>
+      <p class="project-summary">
+        Designed and deployed a secure, high-availability Rocket.Chat platform for internal enterprise communication. The project simulated a real-world IT infrastructure with centralized authentication, fault tolerance, and secure messaging.
+      </p>
+    </section>
+
+    <!-- Section 2: Tech Stack & Role -->
+    <section class="project-meta">
+        <div class="meta-item">
+            <h3>🔧 Key Responsibilities</h3>
+            <p style="margin-bottom: 1rem; opacity: 0.8;">As part of the project team, my key contributions included:</p>
+            <ul>
+                <li>Configuring Active Directory for LDAP & DNS</li>
+                <li>Deploying a 3-node MongoDB replica set</li>
+                <li>Setting up Rocket.Chat app servers with PM2</li>
+                <li>Implementing NGINX as a secure reverse proxy</li>
+                <li>Integrating LDAP for centralized user login</li>
+                <li>Conducting UAT tests for failover and functionality</li>
+            </ul>
+        </div>
+        <div class="meta-item">
+            <h3>🧰 Technologies Used</h3>
+            <div class="tech-stack">
+                <span>Windows Server</span><span>Ubuntu Server</span>
+                <span>Rocket.Chat</span><span>MongoDB</span>
+                <span>Node.js</span><span>Active Directory</span>
+                <span>DNS & LDAP</span><span>NGINX</span><span>PM2</span>
+                <span>VMware vSphere</span><span>HTTPS/SSL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Full Story -->
+    <section class="project-narrative-full">
+        <h2>The Goal</h2>
+        <p>Our primary objective was to deploy an enterprise-grade messaging platform that was both resilient and secure. This meant it couldn't have single points of failure. The system required a redundant database, multiple application servers, and centralized user management that connected to our company's Active Directory.</p>
+        
+        <h2>My Solution & Process</h2>
+        <p>I began by configuring two Windows Server 2019 machines as Domain Controllers to handle LDAP authentication and DNS. For database redundancy, I deployed a three-server MongoDB replica set on Ubuntu, ensuring that if one database server failed, the others would take over instantly. Next, I set up two separate Ubuntu servers for the Rocket.Chat application itself, using PM2 to manage the Node.js processes and ensure they were always running.</p>
+        <p>To secure the platform and distribute user traffic, I installed and configured NGINX as a reverse proxy. This handled all incoming HTTPS traffic, encrypting communications, and load-balancing requests between the two Rocket.Chat servers. Finally, I integrated Rocket.Chat with Active Directory using LDAP, which allowed users to log in with their existing company credentials.</p>
+
+        <!-- NEW: Added a dedicated results section -->
+        <div class="project-results">
+            <h2>🧪 Testing & Results</h2>
+            <ul>
+                <li>✅ Successfully authenticated domain users via Rocket.Chat using LDAP.</li>
+                <li>✅ Verified real-time messaging and channel communication between users.</li>
+                <li>✅ Confirmed that the MongoDB replica set failover worked seamlessly during tests.</li>
+                <li>✅ Validated that NGINX correctly distributed traffic between Rocket.Chat servers.</li>
+            </ul>
+        </div>
+        
+        <h2>💡 Key Takeaways</h2>
+        <p>This project was invaluable for gaining hands-on experience in deploying a fault-tolerant, scalable infrastructure. It deepened my understanding of Linux administration, Active Directory integration, service redundancy using replica sets and reverse proxies, and the importance of secure communication protocols in a team environment.</p>
+    </section>
+
+    <!-- Section 4: Visual Showcase -->
+    <section class="project-gallery">
+      <h2>Visual Showcase</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+            <!-- IMPORTANT: Replace with a real screenshot! -->
+            <img src="project2-screenshot.jpg" alt="The Rocket.Chat user interface.">
+            <p class="caption">The Rocket.Chat Platform in Action</p>
+        </div>
+        <div class="gallery-item">
+            <!-- IMPORTANT: Replace with a real screenshot! -->
+            <img src="placeholder.jpg" alt="A diagram showing the NGINX and server architecture.">
+            <p class="caption">High-Availability Architecture Diagram</p>
+        </div>
+        <div class="gallery-item">
+            <!-- IMPORTANT: Replace with a real screenshot! -->
+            <img src="placeholder.jpg" alt="A terminal showing the MongoDB replica set status.">
+            <p class="caption">MongoDB Replica Set Status</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><p>&copy; 2025 Sana Shaheen. All rights reserved.</p></footer>
+
+</body>
+</html>
