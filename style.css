@@ -1,3 +1,19 @@
+/* --- Add this block to the TOP of project-style.css --- */
+
+/* 
+  Project Page Reset
+  This overrides the `min-height: 100vh` from the main stylesheet,
+  which was causing the large gaps between sections.
+*/
+.project-detail-container section {
+  min-height: auto; /* Let sections be as tall as their content */
+  padding: 0; /* Remove any global padding */
+  margin-bottom: 3rem; /* Add back some controlled spacing */
+}
+
+.project-detail-container section:last-child {
+    margin-bottom: 0; /* No extra space after the very last section */
+}
 /* --- CSS RESET & FONT IMPORT --- */
 :root {
   /* NEW: Slightly adjusted colors for more vibrancy */
