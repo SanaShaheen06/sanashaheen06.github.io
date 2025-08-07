@@ -15,28 +15,27 @@
     <header class="gallery-header">
         <a href="index.html" class="logo">Sana Shaheen<span>.</span></a>
     </header>
+<main class="project-detail-container">
 
-   <main class="project-detail-container">
-
-    <!-- Section 1: Project Overview (Using your text) -->
+    <!-- Section 1: Project Overview -->
     <section class="project-detail-header">
       <span class="project-category">Academic Capstone Project</span>
-      <h1>High-Availability Hybrid IT Infrastructure</h1>
+      <h1>High-Availability Hybrid Infrastructure</h1>
       <p class="project-summary">
-        As part of my final semester at Conestoga College, I collaborated with a team of 4 to plan, design, and deploy a high-availability hybrid IT infrastructure for a simulated global organization with sites in New York and Hong Kong.
+        As part of a team of 4, I planned, designed, and deployed a high-availability hybrid IT infrastructure for a simulated global organization with sites in New York and Hong Kong.
       </p>
     </section>
 
-    <!-- Section 2: Tech Stack & Role (Using your lists) -->
+    <!-- Section 2: Tech Stack & Role -->
     <section class="project-meta">
         <div class="meta-item">
-            <h3>My Role & Responsibilities</h3>
-            <p style="margin-bottom: 1rem; opacity: 0.8;">My role focused on the Hong Kong domain (Capstone.hk) where I:</p>
+            <h3>🔧 My Role & Responsibilities</h3>
+            <p style="margin-bottom: 1rem; opacity: 0.8;">My role focused on the Hong Kong domain (Capstone.hk), where I:</p>
             <ul>
                 <li>Deployed Active Directory (ADDS) & DHCP</li>
                 <li>Implemented Group Policy Objects (GPOs)</li>
                 <li>Established inter-site trust with the NY domain</li>
-                <li>Integrated Linux services (Zammad, Nagios, Mattermost)</li>
+                <li>Integrated Linux services (Zammad, Nagios)</li>
                 <li>Configured secure web access via HTTPS & ADCS</li>
             </ul>
         </div>
@@ -46,46 +45,44 @@
                 <span>Windows Server</span><span>Ubuntu Linux</span>
                 <span>Active Directory</span><span>DNS & DHCP</span>
                 <span>Exchange Server</span><span>Zammad</span>
-                <span>Nagios</span><span>Mattermost</span>
-                <span>PostgreSQL</span><span>Guacamole</span>
+                <span>Nagios</span><span>PostgreSQL</span>
                 <span>Group Policy</span><span>ADCS</span>
                 <span>VMware vSphere</span><span>Virtual Networking</span>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: The Full Story (Narrative version of your text) -->
+    <!-- Section 3: The Full Story -->
     <section class="project-narrative-full">
         <h2>The Goal</h2>
-        <p>The objective was to build a realistic, multi-site IT environment that mirrored a real-world enterprise. The key requirements were to establish two separate but connected domains (New York and Hong Kong), ensure users could be managed centrally, and integrate both Windows-native and Linux-based applications securely.</p>
+        <p>The core objective was to build a realistic, multi-site IT environment from scratch. This required creating two distinct but interconnected domains (New York and Hong Kong) to simulate a global enterprise, ensuring centralized user management and secure integration of both Windows and Linux applications.</p>
         
         <h2>My Solution & Process</h2>
-        <p>Working on the Hong Kong domain, my first step was to deploy Active Directory Domain Services (ADDS) and DHCP on a Windows Server 2019 instance within our VMware vSphere environment. This created the foundation for user and machine management.</p>
-        <p>With the domain established, I implemented several Group Policy Objects (GPOs) to enforce security settings and manage user access to resources. A critical part of the project was establishing an inter-site trust relationship with the New York domain, allowing for cross-domain authentication and resource access.</p>
-        <p>The most interesting part was the cross-platform integration. I successfully connected several Linux-based services into our Windows environment: a Zammad ticketing system for IT support, a Nagios server for infrastructure monitoring, and a Mattermost server for team collaboration. To secure access, I configured our web services to use HTTPS, leveraging Active Directory Certificate Services (ADCS) to issue and manage certificates for authentication.</p>
-
-        <h2>Outcomes & Lessons Learned</h2>
-        <p>This project was a success and provided invaluable hands-on experience. It significantly strengthened my skills in infrastructure deployment, cross-platform integration, system hardening, and teamwork. I learned how to troubleshoot complex connectivity issues between different operating systems and the importance of careful planning in a multi-site network.</p>
+        <p>My work centered on the Hong Kong domain. I began by deploying <strong>Active Directory</strong> and <strong>DHCP</strong> on Windows Server, establishing the foundation for all user and device management. Using <strong>Group Policy Objects (GPOs)</strong>, I enforced security settings and standardized user environments. A critical milestone was configuring a <strong>domain trust</strong> with the New York site, which enabled seamless cross-domain resource access.</p>
+        <p>A key feature of this project was cross-platform integration. I successfully integrated several Linux-based services into our Windows AD environment, including a <strong>Zammad ticketing system</strong> and a <strong>Nagios monitoring server</strong>, proving that open-source tools could be managed within a Microsoft-centric infrastructure.</p>
+        
+        <h2>💡 Key Takeaways</h2>
+        <p>This project was invaluable for strengthening my skills in infrastructure deployment, cross-platform integration, and system hardening. I learned to troubleshoot complex authentication issues between operating systems and the critical importance of meticulous planning in a multi-site network.</p>
     </section>
 
-    <!-- Section 4: Visual Showcase (Add your screenshots here!) -->
+    <!-- Section 4: Visual Showcase -->
     <section class="project-gallery">
       <h2>Visual Showcase</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
             <!-- IMPORTANT: Replace with a real screenshot! -->
-            <img src="placeholder1.jpg" alt="A screenshot showing the Active Directory trust relationship configuration.">
-            <p class="caption">Configuring Inter-Site Domain Trust</p>
+            <img src="project1-screenshot.jpg" alt="Active Directory user management view.">
+            <p class="caption">Active Directory User Management</p>
         </div>
         <div class="gallery-item">
             <!-- IMPORTANT: Replace with a real screenshot! -->
-            <img src="placeholder2.jpg" alt="A screenshot of a Group Policy Object being edited.">
-            <p class="caption">Group Policy Management</p>
+            <img src="placeholder.jpg" alt="A screenshot of a network diagram for the project.">
+            <p class="caption">High-Level Network Diagram</p>
         </div>
         <div class="gallery-item">
             <!-- IMPORTANT: Replace with a real screenshot! -->
-            <img src="placeholder.jpg" alt="Nagios - Dashboard interface ">
-            <p class="caption">Nagios - Dashboard interface</p>
+            <img src="placeholder.jpg" alt="The Nagios dashboard showing monitored services.">
+            <p class="caption">Nagios Monitoring Dashboard</p>
         </div>
       </div>
     </section>
@@ -95,6 +92,7 @@
 </body>
 
 </html>
+
 
 
 
