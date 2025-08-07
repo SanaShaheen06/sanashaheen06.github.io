@@ -193,11 +193,25 @@ nav a:hover { color: var(--primary-color); }
 .project-card-large .project-image { height: 60%; } /* More image height for large card */
 .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, opacity 0.4s ease; }
 .project-card:hover .project-image img { transform: scale(1.05); opacity: 0.9; }
-.project-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-.project-category { font-family: var(--font-secondary); color: var(--primary-color); font-size: 0.8rem; margin-bottom: 0.5rem; display: block; }
+/* Find this existing rule in your style.css file */
+.project-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  
+  /* ADD THESE TWO LINES */
+  display: flex;
+  flex-direction: column;
+}.project-category { font-family: var(--font-secondary); color: var(--primary-color); font-size: 0.8rem; margin-bottom: 0.5rem; display: block; }
 .project-info h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
-.project-narrative p { font-size: 0.95rem; margin-bottom: 1rem; opacity: 0.85; }
-.project-narrative p strong { color: var(--secondary-color); }
+/* Find this existing rule */
+.project-narrative p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+  
+  /* ADD THIS LINE */
+  flex-grow: 1; /* This makes the text area expand */
+}.project-narrative p strong { color: var(--secondary-color); }
 .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 1rem; }
 .tech-stack span { background-color: rgba(76, 201, 240, 0.1); color: var(--secondary-color); padding: 0.4rem 0.8rem; border-radius: 5px; font-size: 0.8rem; font-family: var(--font-secondary); }
 .project-link { color: var(--primary-color); font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; display: inline-block; margin-top: 1rem; }
