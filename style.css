@@ -288,3 +288,10 @@ footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+/* --- FIX 1: Header Overlap --- */
+/* This rule ONLY applies to the body of your project pages */
+.project-detail-body {
+  padding-top: 80px; /* Pushes content down to clear the header */
+}
+
