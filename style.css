@@ -173,6 +173,17 @@ nav a:hover { color: var(--primary-color); }
     box-shadow: 0 0 40px rgba(247, 37, 133, 0.3);
     border-color: var(--primary-color);
 }
+
+/* Add this new rule to your style.css in the projects section */
+
+.project-bento-grid .project-card:not(.project-card-large) {
+    grid-row: span 2; /* Make small cards span 2 base rows for more height */
+}
+
+.project-bento-grid .project-card:not(.project-card-large) .project-image {
+    height: 180px; /* Give all small cards a consistent image height */
+}
+
 /* NEW: Style for the large card in the bento grid */
 .project-card-large {
     grid-column: span 2; /* Make this card span 2 columns */
