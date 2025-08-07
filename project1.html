@@ -15,58 +15,82 @@
         <a href="index.html" class="logo">Sana Shaheen<span>.</span></a>
     </header>
 
-    <main class="gallery-main">
-        <div class="gallery-intro">
-            <h1 class="section-title">IT Infrastructure Deployment - Capstone</h1>
-            <p>This gallery showcases the key components and architecture of the hybrid IT infrastructure project. It includes diagrams of the Active Directory trust relationship, Nagios monitoring dashboards, Zammad ticketing system setup, and the high-availability configuration for key services.</p>
+   <main class="project-detail-container">
+
+    <!-- Section 1: Project Overview (Using your text) -->
+    <section class="project-detail-header">
+      <span class="project-category">Academic Capstone Project</span>
+      <h1>High-Availability Hybrid IT Infrastructure</h1>
+      <p class="project-summary">
+        As part of my final semester at Conestoga College, I collaborated with a team of 4 to plan, design, and deploy a high-availability hybrid IT infrastructure for a simulated global organization with sites in New York and Hong Kong.
+      </p>
+    </section>
+
+    <!-- Section 2: Tech Stack & Role (Using your lists) -->
+    <section class="project-meta">
+        <div class="meta-item">
+            <h3>My Role & Responsibilities</h3>
+            <p style="margin-bottom: 1rem; opacity: 0.8;">My role focused on the Hong Kong domain (Capstone.hk) where I:</p>
+            <ul>
+                <li>Deployed Active Directory (ADDS) & DHCP</li>
+                <li>Implemented Group Policy Objects (GPOs)</li>
+                <li>Established inter-site trust with the NY domain</li>
+                <li>Integrated Linux services (Zammad, Nagios, Mattermost)</li>
+                <li>Configured secure web access via HTTPS & ADCS</li>
+            </ul>
         </div>
-
-        <div class="photo-gallery">
-            <!-- Your first image is here -->
-            <img src="project1-screenshot.jpg" alt="Primary project screenshot" class="gallery-img">
-
-            <!-- 
-            INSTRUCTION: To add more photos, upload them to your repository
-            and then add new lines below like this:
-            <img src="your-new-image-name.jpg" alt="A description of the image" class="gallery-img">
-            -->
-            
-            <!-- Example for your next photos (currently disabled) -->
-            <!-- <img src="image2.jpg" alt="Nagios Monitoring Dashboard" class="gallery-img"> -->
-            <!-- <img src="image3.jpg" alt="Zammad Ticketing System UI" class="gallery-img"> -->
-            <!-- <img src="image4.jpg" alt="Microsoft Exchange DAG Configuration" class="gallery-img"> -->
+        <div class="meta-item">
+            <h3>🧰 Technologies Used</h3>
+            <div class="tech-stack">
+                <span>Windows Server</span><span>Ubuntu Linux</span>
+                <span>Active Directory</span><span>DNS & DHCP</span>
+                <span>Exchange Server</span><span>Zammad</span>
+                <span>Nagios</span><span>Mattermost</span>
+                <span>PostgreSQL</span><span>Guacamole</span>
+                <span>Group Policy</span><span>ADCS</span>
+                <span>VMware vSphere</span><span>Virtual Networking</span>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <!-- The Modal (Lightbox) for viewing images larger -->
-    <div id="imageModal" class="modal">
-        <span class="close-btn">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="caption"></div>
-    </div>
+    <!-- Section 3: The Full Story (Narrative version of your text) -->
+    <section class="project-narrative-full">
+        <h2>The Goal</h2>
+        <p>The objective was to build a realistic, multi-site IT environment that mirrored a real-world enterprise. The key requirements were to establish two separate but connected domains (New York and Hong Kong), ensure users could be managed centrally, and integrate both Windows-native and Linux-based applications securely.</p>
+        
+        <h2>My Solution & Process</h2>
+        <p>Working on the Hong Kong domain, my first step was to deploy Active Directory Domain Services (ADDS) and DHCP on a Windows Server 2019 instance within our VMware vSphere environment. This created the foundation for user and machine management.</p>
+        <p>With the domain established, I implemented several Group Policy Objects (GPOs) to enforce security settings and manage user access to resources. A critical part of the project was establishing an inter-site trust relationship with the New York domain, allowing for cross-domain authentication and resource access.</p>
+        <p>The most interesting part was the cross-platform integration. I successfully connected several Linux-based services into our Windows environment: a Zammad ticketing system for IT support, a Nagios server for infrastructure monitoring, and a Mattermost server for team collaboration. To secure access, I configured our web services to use HTTPS, leveraging Active Directory Certificate Services (ADCS) to issue and manage certificates for authentication.</p>
 
-    <script>
-        var modal = document.getElementById("imageModal");
-        var modalImg = document.getElementById("modalImage");
-        var captionText = document.getElementById("caption");
-        var images = document.getElementsByClassName('gallery-img');
+        <h2>Outcomes & Lessons Learned</h2>
+        <p>This project was a success and provided invaluable hands-on experience. It significantly strengthened my skills in infrastructure deployment, cross-platform integration, system hardening, and teamwork. I learned how to troubleshoot complex connectivity issues between different operating systems and the importance of careful planning in a multi-site network.</p>
+    </section>
 
-        for (var i = 0; i < images.length; i++) {
-            images[i].onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
-        }
+    <!-- Section 4: Visual Showcase (Add your screenshots here!) -->
+    <section class="project-gallery">
+      <h2>Visual Showcase</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+            <!-- IMPORTANT: Replace with a real screenshot! -->
+            <img src="placeholder.jpg" alt="A screenshot showing the Active Directory trust relationship configuration.">
+            <p class="caption">Configuring Inter-Site Domain Trust</p>
+        </div>
+        <div class="gallery-item">
+            <!-- IMPORTANT: Replace with a real screenshot! -->
+            <img src="placeholder.jpg" alt="A screenshot of a Group Policy Object being edited.">
+            <p class="caption">Group Policy Management</p>
+        </div>
+        <div class="gallery-item">
+            <!-- IMPORTANT: Replace with a real screenshot! -->
+            <img src="placeholder.jpg" alt="The Nagios dashboard monitoring both Windows and Linux hosts.">
+            <p class="caption">Nagios Monitoring Cross-Platform Services</p>
+        </div>
+      </div>
+    </section>
 
-        var span = document.getElementsByClassName("close-btn")[0];
-        span.onclick = function() { modal.style.display = "none"; }
-        modal.onclick = function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+</main>
 
 </body>
+
 </html>
