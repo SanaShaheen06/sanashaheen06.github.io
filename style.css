@@ -295,3 +295,42 @@ footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border
   padding-top: 80px; /* Pushes content down to clear the header */
 }
 
+/* --- FIX 2: Large Gaps --- */
+/* This targets ONLY the sections on your project detail pages */
+.project-detail-body section {
+  min-height: auto; /* Overrides the 100vh rule */
+  padding: 3rem 1rem; /* Adds smaller, more reasonable spacing */
+}
+
+/* --- FIX 3: Uneven Gallery Images --- */
+.gallery-item {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.gallery-item-image-container {
+  height: 250px; /* Sets a UNIFORM HEIGHT for all image areas */
+  width: 100%;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scales and crops the image perfectly */
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item .caption {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
