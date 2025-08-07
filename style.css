@@ -232,7 +232,9 @@ nav a:hover { color: var(--primary-color); }
 
 /* --- CONTACT & FOOTER --- */
 .contact { text-align: center; justify-content: center; align-items: center; }
-.contact-intro { max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem; }
+.contact-intro { max-width: 600px; margin-bottom: 2rem; font-size: 1.1rem;
+                /* ADD THIS LINE to make the text a clean block */
+    text-align: justify; }
 .contact-btn { font-size: 1.1rem; }
 .contact-btn i { margin-right: 0.5rem; }
 footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border-top: 1px solid var(--border-color); }
