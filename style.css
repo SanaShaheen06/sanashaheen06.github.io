@@ -334,3 +334,9 @@ footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border
   opacity: 0.8;
 }
 
+/* Add this to the end of style.css */
+.btn-nav-resume {
+    margin-left: 2rem;
+    padding: 8px 20px; /* Make it slightly smaller than main buttons */
+    font-size: 0.9rem;
+}
