@@ -169,8 +169,8 @@ nav a:hover { color: var(--primary-color); }
 /* NEW: Using CSS Grid for a "Bento Box" layout */
 .project-bento-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 250px; /* Define a base row height */
+    /* This automatically creates as many 350px columns as can fit */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 .project-card {
@@ -192,23 +192,14 @@ nav a:hover { color: var(--primary-color); }
     border-color: var(--primary-color);
 }
 
-/* Add this new rule to your style.css in the projects section */
 
-.project-bento-grid .project-card:not(.project-card-large) {
-    grid-row: span 2; /* Make small cards span 2 base rows for more height */
-}
 
 .project-bento-grid .project-card:not(.project-card-large) .project-image {
     height: 180px; /* Give all small cards a consistent image height */
 }
 
-/* NEW: Style for the large card in the bento grid */
-.project-card-large {
-    grid-column: span 2; /* Make this card span 2 columns */
-    grid-row: span 2; /* Make this card span 2 rows */
-}
+
 .project-image { width: 100%; height: 50%; overflow: hidden; }
-.project-card-large .project-image { height: 60%; } /* More image height for large card */
 .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, opacity 0.4s ease; }
 .project-card:hover .project-image img { transform: scale(1.05); opacity: 0.9; }
 /* Find this existing rule in your style.css file */
