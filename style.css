@@ -2,7 +2,7 @@
 :root {
   /* NEW: Slightly adjusted colors for more vibrancy */
   --bg-color: #080a0f; /* Slightly deeper navy-black */
-  --primary-color: #f72585; /* Vibrant Pink - A "dopamine" color */
+  --primary-color: #e63946; /* Strong Red */
   --secondary-color: #4cc9f0; /* Bright Cyan */
   --text-color: #edf2f4;
   --card-bg-color: rgba(29, 53, 87, 0.3);
