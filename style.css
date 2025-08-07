@@ -254,3 +254,28 @@ footer { text-align: center; padding: 2rem 8%; background-color: #0C0E14; border
   }
   .project-image { height: 220px; }
 }
+
+/* --- Add this to the end of project-style.css --- */
+
+.project-results {
+  background-color: rgba(29, 53, 87, 0.5); /* A slightly different background to stand out */
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.project-results h2 {
+  margin-bottom: 1rem;
+}
+
+.project-results ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-results ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
