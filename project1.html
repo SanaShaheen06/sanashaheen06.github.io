@@ -1,19 +1,16 @@
-<body class="project-detail-body">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: IT Infrastructure Deployment</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project: IT Infrastructure Deployment</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 
-      <!-- There is only ONE body tag, with the correct class -->
 <body class="project-detail-body">
 
   <header class="project-header">
@@ -27,109 +24,88 @@
       <span class="project-category">Academic Capstone Project</span>
       <h1>High-Availability Hybrid Infrastructure</h1>
       <p class="project-summary">
-This capstone project focused on designing and deploying a secure, high-availability hybrid IT infrastructure for a simulated multinational organization with two major sites. New York (Headquarters) and Hong Kong (Branch Office). The objective was to build a reliable and scalable environment supporting collaboration, helpdesk, and monitoring services across both locations.
+        This capstone project focused on designing and deploying a secure, high-availability hybrid IT infrastructure for a simulated multinational organization with two major sites — New York (Headquarters) and Hong Kong (Branch Office). The objective was to build a reliable and scalable environment supporting collaboration, helpdesk, and monitoring services across both locations.
       </p>
-        <h2>Key Goals</h2>
+
+      <h2>Key Goals</h2>
+      <ul>
         <li>Establish a redundant Active Directory environment for centralized user management.</li>
-<li>Deploy high-availability Linux and Windows services across two sites.</li>
-
-<li>Implement secure communication, user authentication, and role-based access between locations.</li>
-
-<li>Ensure service continuity and fault tolerance through redundancy and replication mechanisms.</li>
+        <li>Deploy high-availability Linux and Windows services across two sites.</li>
+        <li>Implement secure communication, user authentication, and role-based access between locations.</li>
+        <li>Ensure service continuity and fault tolerance through redundancy and replication mechanisms.</li>
+      </ul>
     </section>
 
     <!-- Section 2: Tech Stack & Role -->
     <section class="project-meta">
-        <div class="meta-item">
-            <h3>My Role & Responsibilities</h3>
-            <p style="margin-bottom: 1rem; opacity: 0.8;">My role focused on the Hong Kong domain (Capstone.hk), where I:</p>
-            <ul>
-                <li>Domain Setup: Configured Primary Domain Controller (DC1) and Secondary Domain Controller (DC2) for redundancy and load balancing.</li>
-                <li>DHCP Deployment: Installed and configured Linux-based DHCP server to assign and manage IP addresses for client machines dynamically.</li>
-                <li>Trust Relationship: Established two-way trust between the Hong Kong and New York domains, enabling cross-domain authentication and resource sharing.</li>
-                <li>User and Group Management: Created and managed user accounts, security groups, and organizational units (OUs) through Active Directory</li>
-                <li>GPO Implementation: Applied Group Policy Objects to enforce security settings, login restrictions, and resource access policies.</li>
-                <li>Application Integration: Assisted in integrating Active Directory authentication with Mattermost and Zammad to enable single sign-on (SSO)</li>
-                <li>Documentation: Created technical documentation outlining network topology, server configurations, and recovery procedures.</li>
-                
-            </ul>
-        </div>
-        
-        <div class="meta-item">
+      <div class="meta-item">
+        <h3>My Role & Responsibilities</h3>
+        <p style="margin-bottom: 1rem; opacity: 0.8;">My role focused on the Hong Kong domain (Capstone.hk), where I:</p>
+        <ul>
+          <li>Configured Primary Domain Controller (DC1) and Secondary Domain Controller (DC2) for redundancy and load balancing.</li>
+          <li>Installed and configured Linux-based DHCP server to assign and manage IP addresses dynamically.</li>
+          <li>Established two-way trust between Hong Kong and New York domains for cross-domain authentication.</li>
+          <li>Created and managed user accounts, security groups, and organizational units (OUs) through Active Directory.</li>
+          <li>Applied Group Policy Objects (GPOs) to enforce security settings and resource access controls.</li>
+          <li>Assisted in integrating Active Directory authentication with Mattermost and Zammad for single sign-on (SSO).</li>
+          <li>Deployed Nagios for server and network monitoring between sites.</li>
+          <li>Created detailed documentation of network topology, configurations, and recovery procedures.</li>
+        </ul>
+      </div>
 
-            <h3>Technologies Used</h3>
-            <div class="tech-stack">
-                <span>Windows Server</span><span>Ubuntu Linux</span>
-                <span>Active Directory</span><span>DNS & DHCP</span>
-                <span>Exchange Server</span><span>Zammad</span>
-                <span>Nagios</span><span>PostgreSQL</span>
-                <span>Group Policy</span><span>ADCS</span>
-                <span>VMware vSphere</span><span>Virtual Networking</span>
-            </div>
+      <div class="meta-item">
+        <h3>Technologies Used</h3>
+        <div class="tech-stack">
+          <span>Windows Server</span><span>Ubuntu Linux</span>
+          <span>Active Directory</span><span>DNS & DHCP</span>
+          <span>Exchange Server</span><span>Zammad</span>
+          <span>Nagios</span><span>PostgreSQL</span>
+          <span>Group Policy</span><span>ADCS</span>
+          <span>VMware vSphere</span><span>Virtual Networking</span>
         </div>
+      </div>
     </section>
 
-    <!-- Section 3: The Full Story -->
+    <!-- Section 3: Full Narrative -->
     <section class="project-narrative-full">
-        <h2>The Goal</h2>
-        <p>The core objective was to build a realistic, multi-site IT environment from scratch. This required creating two distinct but interconnected domains (New York and Hong Kong) to simulate a global enterprise, ensuring centralized user management and secure integration of both Windows and Linux applications.</p>
-        
-        <h2>My Solution & Process</h2>
-        <p>My work centered on the Hong Kong domain. I began by deploying <strong>Active Directory</strong> and <strong>DHCP</strong> on Windows Server, establishing the foundation for all user and device management. Using <strong>Group Policy Objects (GPOs)</strong>, I enforced security settings and standardized user environments. A critical milestone was configuring a <strong>domain trust</strong> with the New York site, which enabled seamless cross-domain resource access.</p>
-        <p>A key feature of this project was cross-platform integration. I successfully integrated several Linux-based services into our Windows AD environment, including a <strong>Zammad ticketing system</strong> and a <strong>Nagios monitoring server</strong>, proving that open-source tools could be managed within a Microsoft-centric infrastructure.</p>
-        
-        <h2>Key Takeaways</h2>
-        <p>This project was invaluable for strengthening my skills in infrastructure deployment, cross-platform integration, and system hardening. I learned to troubleshoot complex authentication issues between operating systems and the critical importance of meticulous planning in a multi-site network.</p>
+      <h2>The Goal</h2>
+      <p>The core objective was to build a realistic, multi-site IT environment from scratch. This required creating two distinct but interconnected domains (New York and Hong Kong) to simulate a global enterprise, ensuring centralized user management and secure integration of both Windows and Linux applications.</p>
+
+      <h2>My Solution & Process</h2>
+      <p>My work centered on the Hong Kong domain. I began by deploying <strong>Active Directory</strong> and <strong>DHCP</strong> on Windows Server, establishing the foundation for user and device management. Using <strong>Group Policy Objects (GPOs)</strong>, I enforced security settings and standardized user environments. A critical milestone was configuring a <strong>domain trust</strong> with the New York site, enabling seamless cross-domain resource access.</p>
+      <p>A key feature of this project was cross-platform integration. I successfully integrated several Linux-based services into the Windows AD environment, including a <strong>Zammad ticketing system</strong> and a <strong>Nagios monitoring server</strong>, demonstrating that open-source tools could function securely within a Microsoft-centric infrastructure.</p>
+
+      <h2>Detailed Overview</h2>
+      <p>The project involved designing a high-availability infrastructure leveraging both Windows and Linux systems. Redundant domain controllers were deployed for load balancing, while DHCP and DNS services ensured consistent IP and name resolution across both locations. Group policies were implemented for security baselines, login control, and system updates.</p>
+      <p>For collaboration and IT service management, <strong>Mattermost</strong> was deployed as an enterprise messaging platform and <strong>Zammad</strong> as the helpdesk solution, both backed by <strong>PostgreSQL</strong> databases. Monitoring was handled via <strong>Nagios</strong>, which provided real-time alerts on server health, disk usage, and network latency.</p>
+      <p>To enhance security, planning for <strong>Active Directory Certificate Services (ADCS)</strong> was included for certificate-based authentication and encryption. The entire setup ran on <strong>VMware vSphere</strong>, allowing for isolated testing, scalability, and resource management.</p>
+
+      <h2>Outcomes & Results</h2>
+      <ul>
+        <li>Successfully deployed a fully functional hybrid IT environment connecting New York and Hong Kong domains.</li>
+        <li>Implemented domain trust and centralized authentication across sites.</li>
+        <li>Achieved redundancy through multi-server architecture and DNS replication.</li>
+        <li>Integrated open-source and Microsoft services securely and efficiently.</li>
+        <li>Produced comprehensive documentation and topology diagrams for assessment.</li>
+      </ul>
+
+      <h2>Key Takeaways</h2>
+      <p>This project strengthened my skills in infrastructure deployment, cross-platform integration, and troubleshooting complex authentication issues between systems. It emphasized the value of meticulous planning, redundancy, and monitoring in maintaining a resilient multi-site network.</p>
     </section>
 
     <!-- Section 4: Visual Showcase -->
-     <section class="project-gallery">
-  <h2>Visual Showcase</h2>
-  <div class="gallery-grid">
-  
-    <!-- Gallery Item 1 -->
-    <div class="gallery-item">
-            <img src="project1-screenshot.jpg" alt="Fig:Proposed Design.">
-        <p class="caption">Fig:Proposed Design</p>
-    </div>
-    
-    <!-- Gallery Item 2 -->
-    <div class="gallery-item">
-            <img src="project1-screenshot2.jpg" alt="Fig:Zammad Dashboard.">
-        <p class="caption">Fig:Zammad Dashboard</p>
-    </div>
-    
-    <!-- Gallery Item 3 -->
-    <div class="gallery-item">
-            <img src="placeholder.jpg" alt="Nagios Monitoring Dashboard.">
-        <p class="caption">Fig:Nagios Monitoring Dashboard</p>
-    </div>
-  </div>
-</section>
-</main>
-
-  <footer><p>&copy; 2025 Sana Shaheen. All rights reserved.</p></footer>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <section class="project-gallery">
+      <h2>Visual Showcase</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="project1-screenshot.jpg" alt="Fig: Proposed Design.">
+          <p class="caption">Fig: Proposed Design</p>
+        </div>
+        <div class="gallery-item">
+          <img src="project1-screenshot2.jpg" alt="Fig: Zammad Dashboard.">
+          <p class="caption">Fig: Zammad Dashboard</p>
+        </div>
+        <div class="gallery-item">
+          <img src="placeholder.jpg" alt="Nagios Monitoring Dashboard.">
+          <p class
 
