@@ -27,7 +27,7 @@
       <span class="project-category">Academic Capstone Project</span>
       <h1>High-Availability Hybrid Infrastructure</h1>
       <p class="project-summary">
-This capstone project focused on designing and deploying a secure, high-availability hybrid IT infrastructure for a simulated multinational organization with two major sites — New York (Headquarters) and Hong Kong (Branch Office). The objective was to build a reliable and scalable environment supporting collaboration, helpdesk, and monitoring services across both locations.
+This capstone project focused on designing and deploying a secure, high-availability hybrid IT infrastructure for a simulated multinational organization with two major sites. New York (Headquarters) and Hong Kong (Branch Office). The objective was to build a reliable and scalable environment supporting collaboration, helpdesk, and monitoring services across both locations.
       </p>
     </section>
 
@@ -37,14 +37,19 @@ This capstone project focused on designing and deploying a secure, high-availabi
             <h3>🔧 My Role & Responsibilities</h3>
             <p style="margin-bottom: 1rem; opacity: 0.8;">My role focused on the Hong Kong domain (Capstone.hk), where I:</p>
             <ul>
-                <li>Deployed Active Directory (ADDS) & DHCP</li>
-                <li>Implemented Group Policy Objects (GPOs)</li>
-                <li>Established inter-site trust with the NY domain</li>
-                <li>Integrated Linux services (Zammad, Nagios)</li>
-                <li>Configured secure web access via HTTPS & ADCS</li>
+                <li>Domain Setup: Configured Primary Domain Controller (DC1) and Secondary Domain Controller (DC2) for redundancy and load balancing.</li>
+                <li>DHCP Deployment: Installed and configured Linux-based DHCP server to assign and manage IP addresses for client machines dynamically.</li>
+                <li>Trust Relationship: Established two-way trust between the Hong Kong and New York domains, enabling cross-domain authentication and resource sharing.</li>
+                <li>User and Group Management: Created and managed user accounts, security groups, and organizational units (OUs) through Active Directory</li>
+                <li>GPO Implementation: Applied Group Policy Objects to enforce security settings, login restrictions, and resource access policies.</li>
+                <li>Application Integration: Assisted in integrating Active Directory authentication with Mattermost and Zammad to enable single sign-on (SSO)</li>
+                <li>Documentation: Created technical documentation outlining network topology, server configurations, and recovery procedures.</li>
+                
             </ul>
         </div>
+        
         <div class="meta-item">
+
             <h3>🧰 Technologies Used</h3>
             <div class="tech-stack">
                 <span>Windows Server</span><span>Ubuntu Linux</span>
@@ -66,7 +71,7 @@ This capstone project focused on designing and deploying a secure, high-availabi
         <p>My work centered on the Hong Kong domain. I began by deploying <strong>Active Directory</strong> and <strong>DHCP</strong> on Windows Server, establishing the foundation for all user and device management. Using <strong>Group Policy Objects (GPOs)</strong>, I enforced security settings and standardized user environments. A critical milestone was configuring a <strong>domain trust</strong> with the New York site, which enabled seamless cross-domain resource access.</p>
         <p>A key feature of this project was cross-platform integration. I successfully integrated several Linux-based services into our Windows AD environment, including a <strong>Zammad ticketing system</strong> and a <strong>Nagios monitoring server</strong>, proving that open-source tools could be managed within a Microsoft-centric infrastructure.</p>
         
-        <h2>💡 Key Takeaways</h2>
+        <h2>Key Takeaways</h2>
         <p>This project was invaluable for strengthening my skills in infrastructure deployment, cross-platform integration, and system hardening. I learned to troubleshoot complex authentication issues between operating systems and the critical importance of meticulous planning in a multi-site network.</p>
     </section>
 
@@ -100,6 +105,7 @@ This capstone project focused on designing and deploying a secure, high-availabi
 
 </body>
 </html>
+
 
 
 
